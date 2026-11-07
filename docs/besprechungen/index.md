@@ -4,9 +4,9 @@ Einzelbesprechungen mit den Experten (je max. 15 Minuten) laut Ablaufplan der TB
 
 | Nr. | Datum | Sprint-Kontext | Vorbereitung und Protokoll |
 | --- | --- | --- | --- |
-| 1 | 16.11.2026 | Ende Sprint 1 | folgt |
-| 2 | 14.12.2026 | Ende Sprint 2 | folgt |
-| 3 | 22.01.2027 | Ende Sprint 3 | folgt |
+| [1](besprechung-1.md) | 16.11.2026 | Ende Sprint 1 | Vorbereitung folgt |
+| [2](besprechung-2.md) | 14.12.2026 | Ende Sprint 2 | Vorbereitung folgt |
+| [3](besprechung-3.md) | 22.01.2027 | Ende Sprint 3 | Vorbereitung folgt |
 
 ## Weitere Abstimmungen
 

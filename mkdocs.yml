@@ -52,6 +52,10 @@ plugins:
   - search:
       lang: de
 
+validation:
+  links:
+    anchors: warn
+
 nav:
   - Start: index.md
   - Projektdokumentation: projektdokumentation.md
@@ -65,8 +69,31 @@ nav:
       - Traceability: projekt/traceability.md
   - Sprints:
       - sprints/index.md
+      - Sprint 1:
+          - Planning: sprints/sprint-1/planning.md
+          - Daily Journal: sprints/sprint-1/daily.md
+          - Review: sprints/sprint-1/review.md
+          - Retrospektive: sprints/sprint-1/retro.md
+      - Sprint 2:
+          - Planning: sprints/sprint-2/planning.md
+          - Daily Journal: sprints/sprint-2/daily.md
+          - Review: sprints/sprint-2/review.md
+          - Retrospektive: sprints/sprint-2/retro.md
+      - Sprint 3:
+          - Planning: sprints/sprint-3/planning.md
+          - Daily Journal: sprints/sprint-3/daily.md
+          - Review: sprints/sprint-3/review.md
+          - Retrospektive: sprints/sprint-3/retro.md
   - Besprechungen:
       - besprechungen/index.md
+      - Besprechung 1: besprechungen/besprechung-1.md
+      - Besprechung 2: besprechungen/besprechung-2.md
+      - Besprechung 3: besprechungen/besprechung-3.md
+  - Nachweise:
+      - Testprotokoll: nachweise/testprotokoll.md
+      - KI-Auswertung: nachweise/ki-auswertung.md
+  - Abschluss:
+      - Schlusspräsentation: abschluss/praesentation.md
   - Anhang:
       - Quellen: anhang/quellen.md
       - Glossar: anhang/glossar.md

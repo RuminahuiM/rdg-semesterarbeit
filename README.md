@@ -20,6 +20,8 @@ Dieses Repository enthält die Dokumentation meiner 4. Semesterarbeit: Projektma
 | `docs/projekt/` | Steckbrief, Einreichungsformular, Roadmap, Scrum-Setup, Risk Register, Findings, Traceability |
 | `docs/sprints/` | Planning, Daily Journal, Review und Retrospektive pro Sprint |
 | `docs/besprechungen/` | Vorbereitung und Protokolle der Besprechungen mit den Experten |
+| `docs/nachweise/` | Testprotokoll und Auswertung der KI-Wartung |
+| `docs/abschluss/` | Schlusspräsentation |
 | `docs/anhang/` | Quellen und Glossar |
 
 ## Lokal ansehen
