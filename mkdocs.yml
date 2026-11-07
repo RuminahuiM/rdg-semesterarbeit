@@ -1,0 +1,72 @@
+site_name: RDG Semesterarbeit
+site_description: "RDG als DevOps-Projekt mit KI-Wartung. Semesterarbeit 4, ITCNE25, TBZ HF"
+site_author: Dodoe Rumiñahui Mannale
+site_url: https://ruminahuim.github.io/rdg-semesterarbeit/
+repo_url: https://github.com/RuminahuiM/rdg-semesterarbeit
+repo_name: RuminahuiM/rdg-semesterarbeit
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: de
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - navigation.footer
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Dunkles Design
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Helles Design
+
+markdown_extensions:
+  - tables
+  - admonition
+  - attr_list
+  - md_in_html
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+plugins:
+  - search:
+      lang: de
+
+nav:
+  - Start: index.md
+  - Projektdokumentation: projektdokumentation.md
+  - Projekt:
+      - Steckbrief: projekt/steckbrief.md
+      - Einreichungsformular: projekt/einreichungsformular.md
+      - Roadmap: projekt/roadmap.md
+      - Scrum-Setup: projekt/scrum-setup.md
+      - Risk Register: projekt/risk-register.md
+      - Findings: projekt/findings.md
+      - Traceability: projekt/traceability.md
+  - Sprints:
+      - sprints/index.md
+  - Besprechungen:
+      - besprechungen/index.md
+  - Anhang:
+      - Quellen: anhang/quellen.md
+      - Glossar: anhang/glossar.md
