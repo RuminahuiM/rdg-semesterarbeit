@@ -1,0 +1,41 @@
+name: Story
+description: User Story oder technische Aufgabe für den Backlog
+labels: ["story"]
+body:
+  - type: markdown
+    attributes:
+      value: "Titel mit Story-Code, z.B. `CI-6: ...`. Neue Stories starten im Status Backlog und wechseln erst zu ToDo, wenn sie die Definition of Ready erfüllen."
+  - type: textarea
+    id: story
+    attributes:
+      label: Story
+      description: "Als <Rolle> möchte ich <Ziel>, damit <Nutzen>. Oder eine klare technische Beschreibung."
+    validations:
+      required: true
+  - type: textarea
+    id: ac
+    attributes:
+      label: Akzeptanzkriterien
+      description: Mindestens zwei prüfbare Kriterien als Checkliste.
+      value: |
+        - [ ] 
+        - [ ] 
+    validations:
+      required: true
+  - type: dropdown
+    id: ziel
+    attributes:
+      label: Ziel
+      options: ["Z1", "Z2", "Z3", "Z4", "PM", "Doku"]
+    validations:
+      required: true
+  - type: input
+    id: sp
+    attributes:
+      label: Story Points
+      description: "Fibonacci: 1, 2, 3, 5, 8 (13 = aufteilen). Leer lassen, wenn noch nicht geschätzt."
+  - type: textarea
+    id: notes
+    attributes:
+      label: Hinweise
+      description: Abhängigkeiten, Links, offene Fragen.

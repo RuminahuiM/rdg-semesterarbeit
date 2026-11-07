@@ -35,13 +35,35 @@ Die Sprint-Längen richten sich nach den fixen Besprechungsterminen der TBZ, dar
 
 ## Artefakte
 
-- **Product Backlog** mit Product Goal: GitHub Projects, Issues im RDG-Repository
-- **Sprint Backlog** mit Sprint Goal: Sprint-Ansicht im Board und `planning.md`
+- **Product Backlog** mit Product Goal: [Kanban-Board in GitHub Projects](https://github.com/users/RuminahuiM/projects/1), Issues in diesem Repository
+- **Sprint Backlog** mit Sprint Goal: Milestone des Sprints im Board und `planning.md`
 - **Increment** mit Definition of Done: Release am Ende jedes Sprints (MVP, MLP, MMP, siehe [Roadmap](roadmap.md))
 
 ### Product Goal
 
 RDG ist ein sauber aufgesetztes Open-Source-Projekt mit CI/CD, automatischem Testdeployment und Release-Freigabe von Hand, und es ist ausgewertet, wie weit ein KI-Agent bei der Wartung helfen kann.
+
+### Board und Status
+
+| Status | Bedeutung |
+| --- | --- |
+| Backlog | Erfasst, aber noch nicht fertig beschrieben. Neue Issues starten hier |
+| ToDo | Erfüllt die Definition of Ready und kann im Sprint angegangen werden |
+| In Progress | In Arbeit |
+| In Review | Fertig umgesetzt, wird geprüft (Pull Request, Akzeptanzkriterien) |
+| Done | Erfüllt die Definition of Done, Issue geschlossen |
+
+Ein Item wechselt erst von Backlog zu ToDo, wenn es die Definition of Ready erfüllt. So ist im Board sichtbar, welche Stories wirklich bereit sind.
+
+| Element | Umsetzung |
+| --- | --- |
+| Epics | Ein Issue pro Ziel (Label `epic`), die Stories hängen als Unter-Issues daran |
+| Story-Code | Kürzel des Epics plus Nummer im Titel, z.B. `CI-4` (PM, CI, DEP, SEC, AI, DOC) |
+| Sprint | Milestone `Sprint 1` bis `Sprint 3` und `Abschluss` |
+| Priorität | Labels `must`, `should`, `could`, `wont` (MoSCoW) |
+| Ziel | Labels `Z1` bis `Z4`, `pm`, `doku` |
+| Story Points | Zahlenfeld im Board, im Sprint Planning gesetzt |
+| Automatik | Neue Issues kommen automatisch ins Board, geschlossene Issues und gemergte Pull Requests landen auf Done |
 
 ### Definition of Ready
 

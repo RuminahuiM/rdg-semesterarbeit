@@ -41,7 +41,7 @@ Details im [Einreichungsformular](projekt/einreichungsformular.md).
 | --- | --- |
 | Produkt-Repository (RDG, Open Source) | [github.com/RuminahuiM/rdg](https://github.com/RuminahuiM/rdg) |
 | Repository dieser Dokumentation | [github.com/RuminahuiM/rdg-semesterarbeit](https://github.com/RuminahuiM/rdg-semesterarbeit) |
-| Kanban-Board (GitHub Projects) | wird in Sprint 1 verlinkt |
+| Kanban-Board (GitHub Projects) | [RDG Semesterarbeit 4](https://github.com/users/RuminahuiM/projects/1) |
 
 ## Aufbau dieser Dokumentation
 
