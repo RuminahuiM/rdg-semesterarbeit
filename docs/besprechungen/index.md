@@ -13,4 +13,4 @@ Einzelbesprechungen mit den Experten (je max. 15 Minuten) laut Ablaufplan der TB
 | Datum | Mit | Thema | Ergebnis |
 | --- | --- | --- | --- |
 | 21.10.2026 | Thanam Pangri, Marcel Bernet | Kubernetes-Vorgabe | Ausnahme für diese Arbeit, Kubernetes kommt in die 5. Semesterarbeit |
-| 07.11.2026 | Corrado Parisi (Teams) | Feedback zum Einreichungsformular | Formular überarbeitet (Version 2), siehe [Einreichungsformular](../projekt/einreichungsformular.md) |
+| 07.11.2026 | Corrado Parisi (Teams) | Feedback zum Einreichungsformular | Formular überarbeitet (Version 2) und mit Antwort gesendet, Freigabe ausstehend, siehe [Einreichungsformular](../projekt/einreichungsformular.md) |

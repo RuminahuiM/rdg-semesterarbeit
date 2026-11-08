@@ -276,7 +276,7 @@ Sprint 2 ist durch die Ferien deutlich kürzer als die anderen Sprints. Das ist 
 | Datum | Mit | Thema | Ergebnis |
 | --- | --- | --- | --- |
 | 21.10.2026 | Thanam Pangri, Marcel Bernet | Kubernetes-Vorgabe | Ausnahme für diese Arbeit |
-| 07.11.2026 | Corrado Parisi | Feedback zum Einreichungsformular | Formular überarbeitet (Version 2) |
+| 07.11.2026 | Corrado Parisi | Feedback zum Einreichungsformular | Formular überarbeitet (Version 2) und gesendet, Freigabe ausstehend |
 
 *Tabelle 8: Abstimmungen mit den Experten*
 
