@@ -39,6 +39,7 @@ Ab Score 4 wird das Risiko aktiv beobachtet, ab Score 6 hat es hohe Priorität.
 ### R-T02: Prompt Injection oder zu viele Rechte
 
 - **Massnahme:** Die Pipeline reagiert nur auf meine Issues. Der Agent bekommt nur die nötigsten Rechte, kann nicht auf `main` pushen und hat keinen Zugriff auf Azure und die Umgebungen. Ein eigener Test-Issue prüft das (Z4).
+- **Zu prüfen (SEC-5):** Ein KI-Chat nimmt Anliegen entgegen und erstellt daraus ein sauberes Issue, bevor der Agent es sieht.
 - **Plan B:** Pipeline sofort deaktivieren, Rechte prüfen, Vorfall dokumentieren.
 
 ### R-T03: Die bestehenden Pipelines brauchen mehr Arbeit
@@ -58,12 +59,12 @@ Ab Score 4 wird das Risiko aktiv beobachtet, ab Score 6 hat es hohe Priorität.
 
 ### R-E02: Die Kosten für die KI steigen
 
-- **Massnahme:** Limit pro Durchlauf, Kosten pro Issue aufschreiben.
+- **Massnahme:** Agent über das bestehende Claude-Abo betreiben statt über die API (AI-9). Limit pro Durchlauf, Kosten bzw. Verbrauch pro Issue aufschreiben. Selbst gehostete Open-Source-Modelle als Alternative prüfen (AI-10).
 - **Plan B:** Weniger Durchläufe, günstigeres Modell für einfache Issues.
 
 ### R-S01 und R-S02: Zu wenig Zeit
 
-- **Massnahme:** Feature-Freeze am 09.01.2027. Doku und Auswertung laufend in jedem Sprint. 20 Prozent Reserve pro Sprint. Sprint 2 hat wegen der Ferien nur ca. 22 h planbare Zeit: Umfang im Sprint 2 Planning bewusst klein halten, die KI-Stories (SEC, AI-1) notfalls an den Anfang von Sprint 3 schieben.
+- **Massnahme:** Feature-Freeze am 09.01.2027. Doku und Auswertung laufend in jedem Sprint. 20 Prozent Reserve pro Sprint. Sprint 2 hat wegen der Ferien nur ca. 25 h planbare Zeit: Umfang im Sprint 2 Planning bewusst klein halten, die KI-Stories (SEC, AI-1) notfalls an den Anfang von Sprint 3 schieben.
 - **Plan B:** Should- und Could-Stories streichen, Fokus auf die Must-Ziele.
 
 ### R-P01: Berufliche oder private Belastung
@@ -77,3 +78,4 @@ Ab Score 4 wird das Risiko aktiv beobachtet, ab Score 6 hat es hohe Priorität.
 | --- | --- |
 | 07.11.2026 | Risk Register aus den Risiken im Einreichungsformular aufgebaut und ergänzt |
 | 08.11.2026 | R-S01 von 6 auf 9 erhöht: Ferien vom 26.11. bis 06.12. verkürzen Sprint 2 deutlich |
+| 08.11.2026 | R-T02 um Idee KI-Intake-Chat ergänzt, R-E02 um Betrieb über das Abo und Open-Source-Modelle ergänzt |

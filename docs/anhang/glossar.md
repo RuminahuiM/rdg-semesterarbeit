@@ -7,6 +7,7 @@ Alphabetisch sortiert, wird laufend ergänzt.
 | ADR | Architecture Decision Record: kurze Dokumentation einer Architekturentscheidung mit Kontext, Optionen, Entscheidung und Folgen |
 | Agent (KI-Agent) | Sprachmodell, das in mehreren Schritten Werkzeuge benutzt, z.B. Code ändert, Tests ausführt und einen Pull Request erstellt |
 | Akzeptanzkriterien | Prüfbare Bedingungen, die eine einzelne Story erfüllen muss |
+| auto-maintain | Label, mit dem ich ein Issue an den KI-Agenten übergebe |
 | Branch-Schutz | Regel auf GitHub, die direkte Pushes auf `main` verhindert und für einen Merge eine grüne CI verlangt |
 | CI/CD | Continuous Integration und Continuous Delivery: Änderungen werden automatisch getestet, gebaut und ausgeliefert |
 | Conventional Commits | Feste Form für Commit-Nachrichten, z.B. `feat: ...` oder `fix: ...` |

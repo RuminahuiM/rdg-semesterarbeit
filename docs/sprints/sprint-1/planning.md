@@ -30,7 +30,7 @@ RDG liegt als sauberes DevOps-Projekt auf GitHub: Projekt-Setup und Board stehen
 | [PM-7](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/18) | Sprint 1 Review und Retrospektive | PM | 2 | must | offen |
 
 **Summe Story Points:** 25 (davon 8 SP am 07.11. weitgehend erledigt)  
-**Verfügbare Kapazität ab 08.11.:** ca. 17.5 h, davon ca. 14 h planbar (20 Prozent Reserve)
+**Verfügbare Kapazität ab 08.11.:** ca. 19 h, davon ca. 15 h planbar (20 Prozent Reserve)
 
 ## 3. Umsetzungsplan
 
@@ -58,7 +58,7 @@ Alles zum Deployment (DEP), zum Sicherheitsrahmen (SEC) und zur KI-Pipeline (AI)
 ## 6. Reserve und Stretch
 
 - **Stretch:** CI-2 (should). Falls die Zeit nicht reicht, geht CI-2 in Sprint 2.
-- **Reserve:** ca. 3.5 h für unerwartete Probleme, vor allem in CI-4.
+- **Reserve:** ca. 4 h für unerwartete Probleme, vor allem in CI-4.
 
 ## 7. Definition-of-Ready-Check
 

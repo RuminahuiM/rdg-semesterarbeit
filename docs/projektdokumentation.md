@@ -100,9 +100,11 @@ Ich möchte RDG darum als Open-Source-Projekt veröffentlichen, das möglichst w
 
 ### 2.1 Warum Scrum
 
-Ich arbeite mit Scrum, weil die TBZ drei feste Besprechungen vorgibt. Diese Termine passen gut als Sprint-Enden: Nach jedem Sprint zeige ich einen lauffähigen Stand und hole Feedback ab. Mit reinem Kanban hätte ich keine festen Zeitpunkte für Planung und Rückblick. Ein Wasserfall-Plan passt schlecht, weil ich beim KI-Teil vorher nicht weiss, was funktioniert. Scrum zwingt mich, nach jedem Sprint zu prüfen, ob der Plan noch stimmt, und ihn anzupassen.
+Ich arbeite mit Scrum, weil ich möglichst viel Übung im agilen Arbeiten sammeln will. In einem DevOps-Team ist ein agiles Vorgehen wie Scrum üblich, darum wende ich es hier so realistisch wie möglich an.
 
-Innerhalb eines Sprints nutze ich das Board in GitHub Projects trotzdem wie ein Kanban-Board, damit ich sehe, wo jede Story steht und was blockiert ist.
+Ehrlich gesagt ist Scrum für einen Solo-Entwickler nicht die praktischste Wahl. Rollen, Events und Artefakte sind für Teams gedacht, und einiges davon wirkt allein künstlich. Für mich allein hätte wohl auch ein einfaches Kanban gereicht. Ich nehme den Mehraufwand bewusst in Kauf und prüfe in den Retrospektiven, welche Teile auch allein helfen und welche nicht (siehe Kapitel 6.1). Gut passt, dass die drei festen Besprechungen der TBZ als Sprint-Enden dienen: Nach jedem Sprint zeige ich einen lauffähigen Stand und hole Feedback ab.
+
+Innerhalb eines Sprints nutze ich das Board in GitHub Projects wie ein Kanban-Board, damit ich sehe, wo jede Story steht und was blockiert ist.
 
 ### 2.2 Scrum in der Solo-Anwendung
 
@@ -226,15 +228,15 @@ Der Backlog liegt im [Kanban-Board](https://github.com/users/RuminahuiM/projects
 
 ### 3.4 Kapazität und Sprint-Kalender
 
-Gearbeitet wird am Samstag und Sonntag (je ca. 5 h) und am Mittwochabend (ca. 2.5 h). Nicht gearbeitet wird in den Ferien vom 26.11. bis 06.12.2026, an Weihnachten (24. bis 26.12.) und über Neujahr (31.12. bis 02.01.). Pro Sprint plane ich ca. 20 Prozent Reserve ein. Die TBZ gibt ca. 50 Stunden als Richtwert vor, meine Kapazität liegt darüber.
+Gearbeitet wird am Samstag und Sonntag (je ca. 5 h) und am Mittwoch (mindestens ca. 4 h). Nicht gearbeitet wird in den Ferien vom 26.11. bis 06.12.2026, an Weihnachten (24. bis 26.12.) und über Neujahr (31.12. bis 02.01.). Pro Sprint plane ich ca. 20 Prozent Reserve ein. Die TBZ gibt ca. 50 Stunden als Richtwert vor, meine Kapazität liegt deutlich darüber.
 
 | Abschnitt | Arbeitstage | Kapazität | davon planbar (80 %) |
 | --- | --- | --- | --- |
-| Sprint 1 (ab Start der Umsetzung am 07.11.) | So 08.11., Mi 11.11., Sa 14.11., So 15.11. | ca. 17.5 h | ca. 14 h |
-| Sprint 2 | Mi 18.11., Sa 21.11., So 22.11., Mi 25.11., Mi 09.12., Sa 12.12., So 13.12. | ca. 27.5 h | ca. 22 h |
-| Sprint 3 bis Feature-Freeze | Mi 16.12., Sa 19.12., So 20.12., Mi 23.12., So 27.12., Mi 30.12., So 03.01., Mi 06.01. | ca. 30 h | ca. 24 h |
-| Sprint 3 nach Feature-Freeze | Sa 09.01., So 10.01., Mi 13.01., Sa 16.01., So 17.01., Mi 20.01. | ca. 25 h | Tests, Auswertung, Doku |
-| Abschluss | Sa 23.01., So 24.01., Mi 27.01. | ca. 12.5 h | Präsentation, Abgabe |
+| Sprint 1 (ab Start der Umsetzung am 07.11.) | So 08.11., Mi 11.11., Sa 14.11., So 15.11. | ca. 19 h | ca. 15 h |
+| Sprint 2 | Mi 18.11., Sa 21.11., So 22.11., Mi 25.11., Mi 09.12., Sa 12.12., So 13.12. | ca. 32 h | ca. 25.5 h |
+| Sprint 3 bis Feature-Freeze | Mi 16.12., Sa 19.12., So 20.12., Mi 23.12., So 27.12., Mi 30.12., So 03.01., Mi 06.01. | ca. 36 h | ca. 29 h |
+| Sprint 3 nach Feature-Freeze | Sa 09.01., So 10.01., Mi 13.01., Sa 16.01., So 17.01., Mi 20.01. | ca. 28 h | Tests, Auswertung, Doku |
+| Abschluss | Sa 23.01., So 24.01., Mi 27.01. | ca. 14 h | Präsentation, Abgabe |
 
 *Tabelle 15: Sprint-Kalender mit echten Arbeitstagen*
 
@@ -327,6 +329,16 @@ Risiken werden nach Wahrscheinlichkeit und Auswirkung (je 1 bis 3) bewertet, der
 
 RDG (Real Dynamic Groups) pflegt die Mitglieder von Microsoft-365-Gruppen nach Regeln. Die Regeln schreibt man in derselben Syntax wie bei dynamischen Gruppen in Entra ID. RDG wertet sie regelmässig aus und schreibt das Resultat als normale, statische Mitglieder in die Gruppe. Dadurch funktioniert die Gruppe überall, wo eine statische Gruppe funktioniert, zum Beispiel als Empfänger in Defender-Richtlinien oder als Verteilerliste.
 
+Was RDG kann:
+
+- **Gruppen erstellen oder übernehmen:** Eine Definition kann eine neue Gruppe anlegen oder eine bestehende Gruppe übernehmen (adopt). RDG pflegt die Gruppe danach weiter, mit derselben Gruppen-ID und Mailadresse, sodass bestehende Verweise weiter funktionieren.
+- **Alle Gruppentypen:** Sicherheitsgruppen, Microsoft-365-Gruppen, mail-aktivierte Sicherheitsgruppen und Verteilerlisten.
+- **Regeleditor:** Die Regel wird schon beim Tippen geprüft, mit demselben Parser, den auch die Engine verwendet.
+- **Manuelle Ausnahmen:** Einzelne Personen lassen sich fix hinzufügen oder ausschliessen, zusätzlich zur Regel.
+- **Vorschau:** Zeigt, wer im Moment zur Regel passt und was sich an der Gruppe ändern würde.
+- **Schutz vor Fehlern:** Im Modus DryRun zeichnet RDG Änderungen nur auf, ohne sie auszuführen. Ändert sich ein Lauf mehr als einen eingestellten Prozentsatz der Mitglieder, wartet RDG auf eine Freigabe durch einen Admin.
+- **Bedienung und Nachvollziehbarkeit:** Sync per Knopfdruck ("Sync now"), Übersicht über die Aktivität aller Gruppen, Audit-Trail (wer hat wann was geändert) und zwei Rollen (Admin und Reader).
+
 RDG besteht aus einer Engine (PowerShell in Azure Automation), einer API (Azure Functions), einer Web-App (React, Azure Static Web Apps) und einer Datenbank (Cosmos DB). Die Infrastruktur wird mit OpenTofu beschrieben und im Tenant des Anwenders installiert (siehe [Kapitel 9.1](#91-ausgangslage-architektur-von-rdg)).
 
 ### 7.2 DevOps, CI/CD und Continuous Delivery
@@ -354,6 +366,8 @@ Ein KI-Agent ist ein Sprachmodell, das nicht nur Text erzeugt, sondern in mehrer
 
 Die Ergebnisse eines Agenten sind nicht vorhersehbar: Er kann eine Aufgabe sauber lösen, nur teilweise lösen oder etwas Falsches mit grosser Überzeugung vorschlagen. Darum bleibt in dieser Arbeit ein Mensch an zwei Stellen in der Schleife (Human in the Loop): beim Review des Pull Requests und bei der Freigabe des Releases. Was der Agent konkret kann und wo er scheitert, ist genau die Frage von Z3.
 
+Für die Kosten ist wichtig, wie sich der Agent anmeldet. Die Claude-Code-Action kann sich mit einem API-Key (Abrechnung pro Token) oder mit einem OAuth-Token aus einem Claude-Abo anmelden. Mit dem Token laufen die Durchläufe über das Abo statt über die API-Abrechnung.[^gha] Die Durchläufe teilen sich dann aber die Limits mit meiner normalen Nutzung des Abos. Ob das im Alltag reicht und stabil läuft, prüfe ich in Sprint 2 (Story AI-9).
+
 !!! info "Wird mit den ersten Versuchen in Sprint 2 vertieft"
 
 ### 7.6 Sicherheit: Least Privilege, OIDC und Prompt Injection
@@ -362,12 +376,16 @@ Die Ergebnisse eines Agenten sind nicht vorhersehbar: Er kann eine Aufgabe saube
 - **OIDC statt Secrets:** Mit OpenID Connect holt sich ein Workflow für jeden Lauf ein kurzlebiges Token von Azure. Es gibt kein langlebiges Passwort, das gestohlen werden könnte.[^oidc] Welcher Workflow ein Token bekommt, legt eine Vertrauensregel in Azure fest (z.B. nur `main` oder nur eine bestimmte Umgebung).
 - **Prompt Injection:** Ein Angreifer versteckt Anweisungen in einem Text, den das Modell liest, zum Beispiel in einem Issue. Die OWASP Top 10 für LLM-Anwendungen führen das als grösstes Risiko (LLM01), zusammen mit "Excessive Agency" (LLM06), also zu vielen Rechten für ein Modell.[^owasp] Gegenmassnahmen sind genau die Grenzen aus Z4: nur Issues von mir, minimale Rechte, Prüfung durch einen Menschen. Ein eigener Test prüft das (T-07 im [Testprotokoll](nachweise/testprotokoll.md)).
 
+Eine Idee, die ich als optionale Story prüfe (SEC-5): Statt dass Issues direkt an den Agenten gehen, nimmt ein KI-Chat die Anliegen entgegen und erstellt daraus ein sauberes Issue nach Vorlage. Das ähnelt dem "Dual LLM"-Muster: Ein Modell liest den unsicheren Text, hat aber keine gefährlichen Rechte, und nur sein strukturiertes Ergebnis geht weiter.[^dual] Ganz verhindern lässt sich Prompt Injection so nicht, weil auch der Chat den Text des Angreifers liest. Der mögliche Schaden wird aber kleiner.
+
 [^dora]: DORA, "DORA's software delivery performance metrics", <https://dora.dev/guides/dora-metrics-four-keys>, Zugriff 08.11.2026.
 [^flow]: GitHub Docs, "GitHub flow", <https://docs.github.com/en/get-started/using-github/github-flow>, Zugriff 08.11.2026.
 [^cc]: Conventional Commits 1.0.0, <https://www.conventionalcommits.org/en/v1.0.0/>, Zugriff 08.11.2026.
 [^semver]: Semantic Versioning 2.0.0, <https://semver.org/>, Zugriff 08.11.2026.
 [^agent]: Background Claude, "Claude Code in GitHub Actions: the v1 recipe, with guardrails", <https://backgroundclaude.com/blog/github-actions>, Zugriff 07.11.2026.
 [^oidc]: GitHub Docs, "Configuring OpenID Connect in Azure", <https://docs.github.com/en/actions/how-tos/secure-your-work/security-harden-deployments/oidc-in-azure>, Zugriff 08.11.2026.
+[^gha]: Anthropic, "Claude Code GitHub Actions", <https://code.claude.com/docs/en/github-actions>, Zugriff 08.11.2026.
+[^dual]: Simon Willison, "The Dual LLM pattern for building AI assistants that can resist prompt injection", <https://simonwillison.net/2023/Apr/25/dual-llm-pattern/>, Zugriff 08.11.2026.
 [^owasp]: PointGuard AI, "Understanding the 2025 OWASP Top 10 for LLM Applications", <https://www.pointguardai.com/blog/understanding-the-owasp-top-10-for-llms>, Zugriff 08.11.2026.
 
 ## 8. Anforderungen
@@ -383,7 +401,7 @@ Die Anforderungen leiten sich aus den Zielen Z1 bis Z4 ab. Jede Anforderung hat 
 | FR-03 | Jeder Merge auf `main` deployt automatisch in die Testumgebung | Z2 | T-03, T-05 |
 | FR-04 | Nach jedem Deployment entscheidet ein Smoke-Test über Erfolg oder Misserfolg | Z2 | T-03 |
 | FR-05 | Ein Release (SemVer-Tag mit Paket) entsteht nur nach meiner Freigabe | Z2 | T-04 |
-| FR-06 | Ein Issue mit dem Label `ai` von mir startet den KI-Agenten | Z3 | AI-1, KI-Auswertung |
+| FR-06 | Ein Issue mit dem Label `auto-maintain` von mir startet den KI-Agenten | Z3 | AI-1, KI-Auswertung |
 | FR-07 | Der Agent erstellt Branch, Änderung, Tests und Pull Request | Z3 | KI-Auswertung |
 | FR-08 | Pro Durchlauf sind Dauer und Kosten nachvollziehbar | Z3 | KI-Auswertung |
 
@@ -399,6 +417,7 @@ Die Anforderungen leiten sich aus den Zielen Z1 bis Z4 ab. Jede Anforderung hat 
 | NFR-04 | Pro Durchlauf gibt es Limits für Kosten und Laufzeit | Z3, Z4 | Konfiguration, KI-Auswertung |
 | NFR-05 | Jeder Schritt ist nachvollziehbar (Pipeline-Logs, Pull Requests, Board) | Z1 bis Z4 | Logs, Board |
 | NFR-06 | Keine Secrets und keine echten Tenant- oder Personendaten in den Repositories | Compliance | Security-Job der CI, Review |
+| NFR-07 | Der Agent verursacht möglichst keine zusätzlichen Kosten: Betrieb über das bestehende Claude-Abo, API-Key nur als Fallback mit Limit | Z3 | AI-9, KI-Auswertung |
 
 *Tabelle 17: Nicht-funktionale Anforderungen*
 
@@ -432,24 +451,29 @@ Die API und die Runbooks verwenden dasselbe Engine-Modul. Darum liefern die Vors
 
 ```mermaid
 flowchart LR
-    I[Issue] -->|Label ai| A[KI-Agent]
-    I -->|ohne Label| D[ich]
+    subgraph AUT[Autor]
+        A[KI-Agent]
+        M[Maintainer]
+    end
+    I[Issue] --> L{Label<br/>auto-maintain?}
+    L -->|ja| A
+    L -->|nein| M
     A --> PR[Pull Request]
-    D --> PR
+    M --> PR
     PR --> CI{CI grün?}
-    CI -->|nein| PR
-    CI -->|ja| R{Review<br/>durch mich}
-    R -->|abgelehnt| PR
-    R -->|ok| M[Merge auf main]
-    M --> T[Automatisches Deployment<br/>Testumgebung + Smoke-Test]
-    T --> E[Test durch mich]
-    E --> F{Freigabe<br/>von Hand}
+    CI -->|nein| AUT
+    CI -->|ja| R{Review durch<br/>Maintainer}
+    R -->|Änderungen nötig| AUT
+    R -->|ok| Mg[Merge auf main]
+    Mg --> T[Automatisches Deployment<br/>Testumgebung + Smoke-Test]
+    T --> E[Test durch Maintainer]
+    E --> F{Freigabe durch<br/>Maintainer}
     F -->|ja| Rel[Release]
 ```
 
 *Abbildung 3: Ablauf vom Issue bis zum Release*
 
-Ich prüfe zweimal: den Code vor dem Merge und die laufende Version vor dem Release.
+Ist die CI rot oder verlangt das Review Änderungen, geht der Pull Request zurück an den Autor, also an den KI-Agenten oder an den Maintainer. Der Maintainer prüft zweimal: den Code vor dem Merge und die laufende Version vor dem Release. In dieser Arbeit bin ich der Maintainer. Nach der Veröffentlichung als Open Source können es auch andere Personen sein.
 
 ### 9.3 Schnittstellen und Einflussgrössen
 
@@ -458,7 +482,7 @@ Ich prüfe zweimal: den Code vor dem Merge und die laufende Version vor dem Rele
 | GitHub (Repos, Actions, Projects, Pages) | Code, Pipelines, Board, Doku | Zentrale Plattform, Limits des Free-Plans |
 | Microsoft Azure | Testumgebung von RDG | Kosten (ca. 27 USD pro Monat), Login aus der Pipeline per OIDC |
 | Microsoft-365-Test-Tenant | Gruppen und Benutzer für Tests | Muss zuerst eingerichtet werden (Sprint 2) |
-| Anthropic API (Claude) | KI-Agent in der Pipeline | Kosten pro Durchlauf, Qualität der Ergebnisse |
+| Claude (Anthropic), angemeldet über das Pro-Abo, API-Key nur als Fallback | KI-Agent in der Pipeline | Limits des Abos werden mit meiner normalen Nutzung geteilt, Qualität der Ergebnisse |
 | Experten und Teams-Kanal | Feedback, Freigaben | Feste Besprechungstermine bestimmen die Sprint-Längen |
 
 *Tabelle 10: Schnittstellen und Einflussgrössen*
@@ -474,6 +498,7 @@ Wichtige Entscheidungen werden im RDG-Repository als Architecture Decision Recor
 | Lizenz | MIT, Apache-2.0, GPL-3.0 | folgt | folgt in Sprint 1 (CI-1) |
 | Login aus der Pipeline nach Azure | OIDC, Client-Secret | folgt | folgt in Sprint 2 (DEP-3) |
 | KI-Agent in der Pipeline | Claude Code in GitHub Actions, andere Agenten | folgt | folgt in Sprint 2 |
+| Anmeldung und Kosten des Agenten | Claude-Abo (OAuth-Token), API-Key, selbst gehostetes Open-Source-Modell | folgt | folgt in Sprint 2 (AI-9, AI-10) |
 
 *Tabelle 11: Entscheidungen und Varianten*
 

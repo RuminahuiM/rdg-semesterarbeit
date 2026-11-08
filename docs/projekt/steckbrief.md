@@ -33,7 +33,7 @@ Zentrale Stammdaten der Semesterarbeit.
 | Wann | Kapazität |
 | --- | --- |
 | Samstag und Sonntag | je ca. 4 bis 6 h (geplant mit 5 h) |
-| Mittwochabend | ca. 2 bis 3 h (geplant mit 2.5 h) |
+| Mittwoch | mindestens ca. 4 h |
 | Übrige Tage | keine Projektarbeit |
 
 ## Absenzen

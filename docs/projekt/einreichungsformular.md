@@ -35,7 +35,7 @@ Das Wichtigste sind Z1, Z2 und Z4: eine funktionierende CI/CD-Pipeline mit Tests
 
 **Z2 – Automatisches Deployment und Freigabe:** Jeder Merge auf main baut automatisch ein Release-Paket und deployt es ohne Handarbeit in die Testumgebung, inklusive Smoke-Test. Ich deploye nicht mehr von meinem PC aus. Ein Release gibt es erst, wenn ich die Version in der Testumgebung getestet und in der Pipeline von Hand freigegeben habe. Nachweis: mindestens 5 erfolgreiche automatische Deployments in die Testumgebung und ein Release, das erst nach meiner Freigabe erstellt wurde.
 
-**Z3 – KI-Wartung als Versuch:** Die KI bekommt nur vier Arten von Issues: kleine Bugs, die man klar nachstellen kann, fehlende Tests, Fehler in der Dokumentation und Updates von Abhängigkeiten, welche die CI-Pipeline kaputt machen. Wenn ich ein Issue mit dem Label "ai" erfasse, erstellt ein KI-Agent einen Branch, ändert den Code, ergänzt Tests und eröffnet einen Pull Request. Ich bereite 8 Test-Issues vor (2 pro Art) und schreibe bei jedem auf: Hat es geklappt (ganz, teilweise oder gar nicht)? Wie viel Zeit musste ich selbst noch investieren? Wie lange hat es gedauert und was hat es gekostet? Nachweis: eine Auswertung der 8 Issues, die zeigt, was die KI gut kann, wo sie scheitert und wie viel Arbeit für mich bleibt. Auch wenn die KI wenig schafft, ist das ein gültiges Ergebnis.
+**Z3 – KI-Wartung als Versuch:** Die KI bekommt nur vier Arten von Issues: kleine Bugs, die man klar nachstellen kann, fehlende Tests, Fehler in der Dokumentation und Updates von Abhängigkeiten, welche die CI-Pipeline kaputt machen. Wenn ich ein Issue mit dem Label "auto-maintain" erfasse, erstellt ein KI-Agent einen Branch, ändert den Code, ergänzt Tests und eröffnet einen Pull Request. Ich bereite 8 Test-Issues vor (2 pro Art) und schreibe bei jedem auf: Hat es geklappt (ganz, teilweise oder gar nicht)? Wie viel Zeit musste ich selbst noch investieren? Wie lange hat es gedauert und was hat es gekostet? Nachweis: eine Auswertung der 8 Issues, die zeigt, was die KI gut kann, wo sie scheitert und wie viel Arbeit für mich bleibt. Auch wenn die KI wenig schafft, ist das ein gültiges Ergebnis.
 
 **Z4 – Die KI bleibt eingeschränkt:** Der KI-Agent kann nicht direkt auf main pushen, hat keinen Zugriff auf Azure und die Umgebungen und reagiert nur auf Issues von mir. Nachweis: Ein Test-Issue mit einer versteckten falschen Anweisung (Prompt Injection) führt zu keiner unerlaubten Aktion.
 
@@ -45,7 +45,7 @@ Das Wichtigste sind Z1, Z2 und Z4: eine funktionierende CI/CD-Pipeline mit Tests
 
 So läuft jede Änderung ab, egal ob sie von der KI oder von mir kommt:
 
-1.  Ich erfasse ein Issue. Hat es das Label "ai", startet der KI-Agent.
+1.  Ich erfasse ein Issue. Hat es das Label "auto-maintain", startet der KI-Agent.
 
 2.  Der Agent erstellt einen Branch, ändert Code und Tests und eröffnet einen Pull Request.
 
