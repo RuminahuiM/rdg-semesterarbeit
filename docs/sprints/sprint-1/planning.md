@@ -64,6 +64,6 @@ Alles zum Deployment (DEP), zum Sicherheitsrahmen (SEC) und zur KI-Pipeline (AI)
 
 - [x] Alle ausgewählten Stories haben mindestens zwei Akzeptanzkriterien
 - [x] Alle ausgewählten Stories sind geschätzt (Story Points im Issue)
-- [ ] Story Points im Board eingetragen, Stories auf ToDo
+- [x] Story Points im Board eingetragen, Stories auf ToDo (08.11.2026)
 - [x] Abhängigkeiten geklärt (CI-5 nach CI-4)
 - [x] Offene Findings (F-001 bis F-003) und aktive Risiken geprüft
