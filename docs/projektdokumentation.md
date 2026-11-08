@@ -155,10 +155,35 @@ Um den Effekt sichtbar zu machen, vergleiche ich pro Story die Schätzung (Story
 ### 3.2 Gantt-Chart
 
 ```mermaid
+---
+config:
+  themeCSS: |
+    .mermaid-main-font, text { font-family: var(--md-text-font-family, sans-serif); }
+    .titleText { fill: var(--md-default-fg-color); font-size: 17px; font-weight: 700; }
+    .sectionTitle { fill: var(--md-default-fg-color--light); font-weight: 700; }
+    .section, .section1, .section3 { opacity: 1; }
+    .section0, .section2 { fill: var(--md-default-fg-color--lightest); }
+    .section1, .section3 { fill: transparent; }
+    .grid .tick { opacity: 1; }
+    .grid .tick line { stroke: var(--md-default-fg-color--lighter); stroke-opacity: .5; }
+    .grid .tick text { fill: var(--md-default-fg-color--light); stroke: none; font-size: 12px; }
+    .today { stroke: var(--gantt-today, #6a2c91); stroke-width: 2px; stroke-dasharray: 6 4; }
+    .task0, .task1, .task2, .task3 { fill: var(--gantt-task, #e3a400); stroke: var(--gantt-task, #e3a400); }
+    .taskText0, .taskText1, .taskText2, .taskText3 { fill: #1a1a1a; font-weight: 600; }
+    .taskTextOutsideLeft, .taskTextOutsideRight, .taskTextOutside0, .taskTextOutside1, .taskTextOutside2, .taskTextOutside3 { fill: var(--md-default-fg-color); }
+    .milestone { fill: var(--gantt-milestone, #6a2c91); stroke: var(--gantt-milestone, #6a2c91); }
+    .milestoneText { font-style: normal; }
+    .done0, .done1, .done2, .done3 { fill: var(--md-default-fg-color--lightest); stroke: var(--md-default-fg-color--light); stroke-width: 1; }
+    .doneText0, .doneText1, .doneText2, .doneText3, .doneText0.taskTextOutsideRight, .doneText1.taskTextOutsideRight, .doneText2.taskTextOutsideRight, .doneText3.taskTextOutsideRight { fill: var(--md-default-fg-color) !important; }
+    .crit0, .crit1, .crit2, .crit3 { fill: var(--gantt-crit, #c8382f); stroke: var(--gantt-crit, #c8382f); }
+    .critText0, .critText1, .critText2, .critText3 { fill: var(--md-default-fg-color) !important; font-weight: 600; }
+---
 gantt
     title Semesterarbeit 4: RDG
     dateFormat  YYYY-MM-DD
     axisFormat  %d.%m.
+    tickInterval 2week
+    weekday monday
     section Sprints
     Sprint 1 (Z1)                  :s1, 2026-10-26, 2026-11-16
     Sprint 2 (Z2, Z4)              :s2, 2026-11-17, 2026-12-14
