@@ -8,6 +8,8 @@ edit_uri: edit/main/docs/
 
 theme:
   name: material
+  logo: https://ruminahuim.github.io/assets/brand/logo.svg
+  favicon: https://ruminahuim.github.io/assets/brand/logo.svg
   language: de
   features:
     - navigation.sections
@@ -20,16 +22,22 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-7
         name: Dunkles Design
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-4
         name: Helles Design
+
+# Farben zentral von der Portfolio-Hauptseite (siehe README von RuminahuiM.github.io)
+extra_css:
+  - https://ruminahuim.github.io/assets/brand/palette.css
 
 markdown_extensions:
   - tables
