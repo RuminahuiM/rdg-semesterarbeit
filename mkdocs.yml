@@ -56,6 +56,10 @@ validation:
   links:
     anchors: warn
 
+# Logo im Header fuehrt zurueck zum Portfolio (Hauptseite)
+extra:
+  homepage: https://ruminahuim.github.io/
+
 nav:
   - Start: index.md
   - Projektdokumentation: projektdokumentation.md
