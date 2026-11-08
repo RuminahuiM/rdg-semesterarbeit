@@ -26,9 +26,11 @@ FOOTER = (
     '<span><span class="pageNumber"></span> / <span class="totalPages"></span></span></div>'
 )
 
-# Every top-level chapter (h1 after the title) starts on a new page;
+# Full page width; every top-level chapter (h1 after the title) starts on a new page;
 # table rows, admonitions, code blocks and diagrams are not split.
 PRINT_CSS = """
+.md-grid { max-width: none; }
+.md-main__inner, .md-content__inner { margin: 0; padding: 0; }
 .md-typeset h1 ~ h1 { break-before: page; }
 .md-typeset tr, .md-typeset .admonition, .md-typeset pre,
 .md-typeset .mermaid { break-inside: avoid; }
