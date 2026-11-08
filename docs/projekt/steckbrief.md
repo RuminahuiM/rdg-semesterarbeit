@@ -14,7 +14,7 @@ Zentrale Stammdaten der Semesterarbeit.
 | Semester | 4 |
 | Form | Solo |
 | Themenfelder | Projektmanagement (Pflicht), DevOps |
-| Experten | Projektmanagement: Corrado Parisi. Fachlich (DevOps): wird ergänzt |
+| Experten | Projektmanagement: Corrado Parisi. Fachlich (DevOps): Thanam Pangri und Patrick (Zuteilung wird bestätigt) |
 | Zeitbudget | ca. 50 Stunden (Vorgabe TBZ), max. 12 Wochen |
 
 ## Termine
@@ -32,9 +32,19 @@ Zentrale Stammdaten der Semesterarbeit.
 
 | Wann | Kapazität |
 | --- | --- |
-| Wochenende (Samstag und/oder Sonntag) | je ca. 4 bis 6 h |
-| Ein Abend unter der Woche | ca. 2 bis 3 h |
+| Samstag und Sonntag | je ca. 4 bis 6 h (geplant mit 5 h) |
+| Mittwochabend | ca. 2 bis 3 h (geplant mit 2.5 h) |
 | Übrige Tage | keine Projektarbeit |
+
+## Absenzen
+
+| Zeitraum | Grund |
+| --- | --- |
+| 26.11. bis 06.12.2026 | Ferien |
+| 24.12. bis 26.12.2026 | Weihnachten |
+| 31.12.2026 bis 02.01.2027 | Silvester und Neujahr |
+
+Der Sprint-Kalender mit den echten Arbeitstagen und der Kapazität pro Sprint steht in der [Projektdokumentation, Kapitel 3.4](../projektdokumentation.md#34-kapazitat-und-sprint-kalender).
 
 ## Sprints
 

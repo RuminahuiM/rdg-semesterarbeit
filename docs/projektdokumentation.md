@@ -10,7 +10,7 @@
 
 Diese Projektdokumentation besteht aus **Teil A Projektmanagement** (Kapitel 1 bis 6) und **Teil B fachliche Umsetzung** (Kapitel 7 bis 13), gefolgt vom gemeinsamen **Anhang** (Kapitel 14). Sie wird während der Arbeit laufend ergänzt. Details liegen in den verlinkten Seiten dieser Doku, im [Kanban-Board](https://github.com/users/RuminahuiM/projects/1) und im Produkt-Repository [RuminahuiM/rdg](https://github.com/RuminahuiM/rdg).
 
-!!! info "Stand 07.11.2026"
+!!! info "Stand 08.11.2026"
     Gerüst mit allen Kapiteln. Was schon feststeht, ist ausgefüllt. Kapitel mit dem Hinweis "Folgt" werden im genannten Sprint ergänzt.
 
 ## Inhaltsverzeichnis
@@ -68,7 +68,7 @@ Ich möchte RDG darum als Open-Source-Projekt veröffentlichen, das möglichst w
 | --- | --- | --- |
 | Ich (Studierender) | Product Owner, Scrum Master, Developer | Erfolgreiche Semesterarbeit, RDG langfristig wartbar machen |
 | Corrado Parisi | Experte Projektmanagement | Sauberes agiles Vorgehen, nachvollziehbare Planung und Steuerung |
-| Fachexperte DevOps | Experte Fachliches Modul | Fachlich korrekte Umsetzung von CI/CD, Deployment und KI-Pipeline |
+| Thanam Pangri, Patrick (Zuteilung wird bestätigt) | Experten DevOps | Fachlich korrekte Umsetzung von CI/CD, Deployment und KI-Pipeline |
 | Erster Anwender von RDG (mein Arbeitgeber) | Kunde | RDG weiter nutzen können, auch ohne mich |
 | Open-Source-Community | spätere Nutzer und Mitwirkende | Verständliches, sicheres und gepflegtes Tool |
 
@@ -100,8 +100,9 @@ Ich möchte RDG darum als Open-Source-Projekt veröffentlichen, das möglichst w
 
 ### 2.1 Warum Scrum
 
-!!! info "Folgt in Sprint 2"
-    Begründung für Scrum statt Kanban oder Wasserfall in einem Solo-Projekt mit festen Besprechungsterminen.
+Ich arbeite mit Scrum, weil die TBZ drei feste Besprechungen vorgibt. Diese Termine passen gut als Sprint-Enden: Nach jedem Sprint zeige ich einen lauffähigen Stand und hole Feedback ab. Mit reinem Kanban hätte ich keine festen Zeitpunkte für Planung und Rückblick. Ein Wasserfall-Plan passt schlecht, weil ich beim KI-Teil vorher nicht weiss, was funktioniert. Scrum zwingt mich, nach jedem Sprint zu prüfen, ob der Plan noch stimmt, und ihn anzupassen.
+
+Innerhalb eines Sprints nutze ich das Board in GitHub Projects trotzdem wie ein Kanban-Board, damit ich sehe, wo jede Story steht und was blockiert ist.
 
 ### 2.2 Scrum in der Solo-Anwendung
 
@@ -130,8 +131,14 @@ Schätzung mit Story Points nach Fibonacci, Priorisierung nach MoSCoW (Labels `m
 
 ### 2.6 Arbeiten mit KI-Unterstützung
 
-!!! info "Folgt in Sprint 2"
-    Wie ich KI als Assistent einsetze, wie ich die Ergebnisse prüfe und wie ich den Zeitgewinn messe.
+KI kommt in dieser Arbeit auf zwei Arten vor:
+
+1. **Als Gegenstand der Arbeit:** Ein KI-Agent soll in der Pipeline Issues bearbeiten (Z3), mit klaren Grenzen (Z4).
+2. **Als Assistent bei meiner Arbeit:** Ich nutze Claude beim Planen, Recherchieren, Schreiben und Programmieren.
+
+Für den zweiten Punkt gelten feste Regeln: Ich prüfe alle Ergebnisse selbst, Änderungen am Code laufen wie alle anderen über Pull Request und CI, und ich verantworte alles, was abgegeben wird. Die Deklaration steht in [Kapitel 14.1](#141-deklaration-der-ki-nutzung).
+
+Um den Effekt sichtbar zu machen, vergleiche ich pro Story die Schätzung (Story Points, als Richtwert ohne KI in Stunden umgerechnet) mit der tatsächlich gebrauchten Zeit aus dem Daily Journal. Die Auswertung folgt in Kapitel 6.
 
 ## 3. Planung
 
@@ -161,6 +168,10 @@ gantt
     MVP                            :milestone, m1, 2026-11-16, 0d
     MLP                            :milestone, m2, 2026-12-14, 0d
     MMP                            :milestone, m3, 2027-01-22, 0d
+    section Absenzen
+    Ferien                         :done, f1, 2026-11-26, 2026-12-06
+    Weihnachten                    :done, f2, 2026-12-24, 2026-12-26
+    Neujahr                        :done, f3, 2026-12-31, 2027-01-02
     section Termine
     Besprechung 1                  :milestone, b1, 2026-11-16, 0d
     Besprechung 2                  :milestone, b2, 2026-12-14, 0d
@@ -169,7 +180,7 @@ gantt
     Abgabe und Präsentation        :crit, milestone, ab, 2027-01-27, 0d
 ```
 
-*Abbildung 1: Gantt-Chart mit Sprints, Releases und Terminen*
+*Abbildung 1: Gantt-Chart mit Sprints, Releases, Absenzen und Terminen*
 
 Ab dem **Feature-Freeze am 09.01.2027** kommen keine neuen Funktionen mehr dazu. Die Zeit bis zur Abgabe ist für Tests, Fehlerbehebung, Auswertung und Dokumentation reserviert.
 
@@ -188,9 +199,21 @@ Der Backlog liegt im [Kanban-Board](https://github.com/users/RuminahuiM/projects
 
 *Tabelle 6: Epics*
 
-### 3.4 Kapazität
+### 3.4 Kapazität und Sprint-Kalender
 
-Gearbeitet wird am Wochenende (je ca. 4 bis 6 h) und an einem Abend unter der Woche (ca. 2 bis 3 h). Pro Sprint plane ich ca. 20 Prozent Reserve ein. Die TBZ gibt ca. 50 Stunden als Richtwert vor.
+Gearbeitet wird am Samstag und Sonntag (je ca. 5 h) und am Mittwochabend (ca. 2.5 h). Nicht gearbeitet wird in den Ferien vom 26.11. bis 06.12.2026, an Weihnachten (24. bis 26.12.) und über Neujahr (31.12. bis 02.01.). Pro Sprint plane ich ca. 20 Prozent Reserve ein. Die TBZ gibt ca. 50 Stunden als Richtwert vor, meine Kapazität liegt darüber.
+
+| Abschnitt | Arbeitstage | Kapazität | davon planbar (80 %) |
+| --- | --- | --- | --- |
+| Sprint 1 (ab Start der Umsetzung am 07.11.) | So 08.11., Mi 11.11., Sa 14.11., So 15.11. | ca. 17.5 h | ca. 14 h |
+| Sprint 2 | Mi 18.11., Sa 21.11., So 22.11., Mi 25.11., Mi 09.12., Sa 12.12., So 13.12. | ca. 27.5 h | ca. 22 h |
+| Sprint 3 bis Feature-Freeze | Mi 16.12., Sa 19.12., So 20.12., Mi 23.12., So 27.12., Mi 30.12., So 03.01., Mi 06.01. | ca. 30 h | ca. 24 h |
+| Sprint 3 nach Feature-Freeze | Sa 09.01., So 10.01., Mi 13.01., Sa 16.01., So 17.01., Mi 20.01. | ca. 25 h | Tests, Auswertung, Doku |
+| Abschluss | Sa 23.01., So 24.01., Mi 27.01. | ca. 12.5 h | Präsentation, Abgabe |
+
+*Tabelle 15: Sprint-Kalender mit echten Arbeitstagen*
+
+Sprint 2 ist durch die Ferien deutlich kürzer als die anderen Sprints. Das ist im Risk Register erfasst (R-S01) und wird im Sprint 2 Planning beim Umfang berücksichtigt.
 
 ### 3.5 SWOT-Analyse
 
@@ -246,7 +269,7 @@ Risiken werden nach Wahrscheinlichkeit und Auswirkung (je 1 bis 3) bewertet, der
 | R-T02 | Prompt Injection oder zu viele Rechte für den Agenten | 6 | Nur meine Issues, minimale Rechte, kein Zugriff auf Umgebungen, eigener Test |
 | R-K01 | Der KI-Teil ist schwieriger als gedacht | 6 | Z1 und Z2 zuerst, vier klar begrenzte Issue-Arten |
 | R-E01 | Testumgebung nicht rechtzeitig verfügbar | 6 | Test-Tenant zu Beginn von Sprint 2, Mocks als Plan B |
-| R-S01 | Sprints laufen über | 6 | 20 Prozent Reserve, MoSCoW, Should- und Could-Stories zuerst streichen |
+| R-S01 | Sprints laufen über, besonders Sprint 2 wegen der Ferien | 9 | 20 Prozent Reserve, MoSCoW, Should- und Could-Stories zuerst streichen, Umfang von Sprint 2 im Planning bewusst klein halten |
 | R-S02 | Zu wenig Zeit für Doku am Schluss | 6 | Feature-Freeze 09.01.2027, Doku laufend in jedem Sprint |
 
 *Tabelle 9: Risiken mit hoher Priorität (Stand 07.11.2026)*
@@ -275,29 +298,84 @@ Risiken werden nach Wahrscheinlichkeit und Auswirkung (je 1 bis 3) bewertet, der
 
 ## 7. Fachlicher Kontext und Theorie
 
-!!! info "Folgt in Sprint 2"
-    Theorie aus dem DevOps-Unterricht, jeweils mit Bezug zu RDG.
-
 ### 7.1 RDG kurz erklärt
+
+RDG (Real Dynamic Groups) pflegt die Mitglieder von Microsoft-365-Gruppen nach Regeln. Die Regeln schreibt man in derselben Syntax wie bei dynamischen Gruppen in Entra ID. RDG wertet sie regelmässig aus und schreibt das Resultat als normale, statische Mitglieder in die Gruppe. Dadurch funktioniert die Gruppe überall, wo eine statische Gruppe funktioniert, zum Beispiel als Empfänger in Defender-Richtlinien oder als Verteilerliste.
+
+RDG besteht aus einer Engine (PowerShell in Azure Automation), einer API (Azure Functions), einer Web-App (React, Azure Static Web Apps) und einer Datenbank (Cosmos DB). Die Infrastruktur wird mit OpenTofu beschrieben und im Tenant des Anwenders installiert (siehe [Kapitel 9.1](#91-ausgangslage-architektur-von-rdg)).
 
 ### 7.2 DevOps, CI/CD und Continuous Delivery
 
+DevOps bringt Entwicklung und Betrieb zusammen: Änderungen sollen klein, häufig und sicher in Betrieb gehen. Zwei Bausteine sind dafür zentral:
+
+- **Continuous Integration (CI):** Jede Änderung wird automatisch gebaut und getestet, bevor sie in den Hauptstand kommt. Bei RDG prüft die CI-Pipeline Linting, Unit-Tests, Verträge der API, die Infrastruktur und Sicherheitsregeln (siehe [Kapitel 11.1](#111-teststrategie)).
+- **Continuous Delivery (CD):** Jeder geprüfte Stand kann jederzeit ausgeliefert werden. Bei RDG heisst das: Jeder Merge auf `main` landet automatisch in der Testumgebung (Z2). Ein Release für Anwender entsteht aber erst nach einer Freigabe von Hand. Das ist der Unterschied zu Continuous Deployment, wo jede Änderung ohne Freigabe in Produktion geht.
+
+Wie gut eine Auslieferung funktioniert, misst die DORA-Forschung mit fünf Kennzahlen: Change Lead Time, Deployment Frequency, Failed Deployment Recovery Time, Change Fail Rate und Deployment Rework Rate.[^dora] Für diese Arbeit sind vor allem die Deployment Frequency und die Change Lead Time interessant, weil sie zeigen, wie schnell eine Änderung (auch vom KI-Agenten) in der Testumgebung ankommt.
+
 ### 7.3 GitHub Flow, Conventional Commits und SemVer
+
+- **GitHub Flow:** Für jede Änderung ein kurzer Branch von `main`, dann ein Pull Request, Prüfung, Merge und Löschen des Branches.[^flow] `main` ist immer lauffähig. Für ein kleines Projekt ohne parallele Release-Linien ist das einfacher als Git Flow. Der Entscheid wird in Story CI-3 als ADR festgehalten.
+- **Conventional Commits:** Commit-Nachrichten haben eine feste Form wie `feat: ...`, `fix: ...` oder `docs: ...`.[^cc] So kann man aus der Historie ablesen, was sich geändert hat, und die nächste Versionsnummer ableiten.
+- **Semantic Versioning (SemVer):** Versionen haben die Form `MAJOR.MINOR.PATCH`.[^semver] MAJOR steigt bei inkompatiblen Änderungen, MINOR bei neuen Funktionen, PATCH bei Fehlerkorrekturen. Vorabversionen wie `0.1.0-eval.4` sind erlaubt und zeigen, dass RDG noch nicht stabil ist.
 
 ### 7.4 Infrastructure as Code mit OpenTofu
 
+Bei Infrastructure as Code wird die Infrastruktur als Code beschrieben, versioniert und automatisch ausgerollt, statt sie von Hand im Portal anzulegen. RDG nutzt dafür OpenTofu, die Open-Source-Variante von Terraform. Ein `plan` zeigt vor jeder Änderung, was passieren würde, ein `apply` setzt es um. In der CI-Pipeline wird die Konfiguration mit einem gemockten Provider getestet (`tofu test`), also ohne echte Azure-Ressourcen.
+
 ### 7.5 KI-Agenten in der Softwarewartung
+
+Ein KI-Agent ist ein Sprachmodell, das nicht nur Text erzeugt, sondern in mehreren Schritten Werkzeuge benutzt: Dateien lesen, Code ändern, Tests ausführen und einen Pull Request erstellen. In GitHub Actions kann ein solcher Agent durch ein Ereignis gestartet werden, zum Beispiel durch ein Issue mit einem bestimmten Label.[^agent]
+
+Die Ergebnisse eines Agenten sind nicht vorhersehbar: Er kann eine Aufgabe sauber lösen, nur teilweise lösen oder etwas Falsches mit grosser Überzeugung vorschlagen. Darum bleibt in dieser Arbeit ein Mensch an zwei Stellen in der Schleife (Human in the Loop): beim Review des Pull Requests und bei der Freigabe des Releases. Was der Agent konkret kann und wo er scheitert, ist genau die Frage von Z3.
+
+!!! info "Wird mit den ersten Versuchen in Sprint 2 vertieft"
 
 ### 7.6 Sicherheit: Least Privilege, OIDC und Prompt Injection
 
+- **Least Privilege:** Jede Komponente bekommt nur die Rechte, die sie wirklich braucht. Für den Agenten heisst das: Er darf einen Branch und einen Pull Request erstellen, aber nicht auf `main` pushen und nicht auf Azure zugreifen (Z4).
+- **OIDC statt Secrets:** Mit OpenID Connect holt sich ein Workflow für jeden Lauf ein kurzlebiges Token von Azure. Es gibt kein langlebiges Passwort, das gestohlen werden könnte.[^oidc] Welcher Workflow ein Token bekommt, legt eine Vertrauensregel in Azure fest (z.B. nur `main` oder nur eine bestimmte Umgebung).
+- **Prompt Injection:** Ein Angreifer versteckt Anweisungen in einem Text, den das Modell liest, zum Beispiel in einem Issue. Die OWASP Top 10 für LLM-Anwendungen führen das als grösstes Risiko (LLM01), zusammen mit "Excessive Agency" (LLM06), also zu vielen Rechten für ein Modell.[^owasp] Gegenmassnahmen sind genau die Grenzen aus Z4: nur Issues von mir, minimale Rechte, Prüfung durch einen Menschen. Ein eigener Test prüft das (T-07 im [Testprotokoll](nachweise/testprotokoll.md)).
+
+[^dora]: DORA, "DORA's software delivery performance metrics", <https://dora.dev/guides/dora-metrics-four-keys>, Zugriff 08.11.2026.
+[^flow]: GitHub Docs, "GitHub flow", <https://docs.github.com/en/get-started/using-github/github-flow>, Zugriff 08.11.2026.
+[^cc]: Conventional Commits 1.0.0, <https://www.conventionalcommits.org/en/v1.0.0/>, Zugriff 08.11.2026.
+[^semver]: Semantic Versioning 2.0.0, <https://semver.org/>, Zugriff 08.11.2026.
+[^agent]: Background Claude, "Claude Code in GitHub Actions: the v1 recipe, with guardrails", <https://backgroundclaude.com/blog/github-actions>, Zugriff 07.11.2026.
+[^oidc]: GitHub Docs, "Configuring OpenID Connect in Azure", <https://docs.github.com/en/actions/how-tos/secure-your-work/security-harden-deployments/oidc-in-azure>, Zugriff 08.11.2026.
+[^owasp]: PointGuard AI, "Understanding the 2025 OWASP Top 10 for LLM Applications", <https://www.pointguardai.com/blog/understanding-the-owasp-top-10-for-llms>, Zugriff 08.11.2026.
+
 ## 8. Anforderungen
 
-!!! info "Folgt in Sprint 1 und 2"
-    Funktionale und nicht-funktionale Anforderungen an Pipelines und KI-Pipeline, abgeleitet aus den Zielen Z1 bis Z4.
+Die Anforderungen leiten sich aus den Zielen Z1 bis Z4 ab. Jede Anforderung hat einen Nachweis im [Testprotokoll](nachweise/testprotokoll.md) oder in der [KI-Auswertung](nachweise/ki-auswertung.md). Die Anforderungen an RDG selbst stehen im Design im RDG-Repository und sind nicht Teil dieser Arbeit.
 
 ### 8.1 Funktionale Anforderungen
 
+| ID | Anforderung | Ziel | Nachweis |
+| --- | --- | --- | --- |
+| FR-01 | Auf `main` kann nur per Pull Request gemergt werden, und nur wenn die CI grün ist | Z1 | T-01, T-02 |
+| FR-02 | Die CI prüft bei jedem Pull Request Linting, Tests, API-Verträge, Infrastruktur und Sicherheit | Z1 | CI-Läufe |
+| FR-03 | Jeder Merge auf `main` deployt automatisch in die Testumgebung | Z2 | T-03, T-05 |
+| FR-04 | Nach jedem Deployment entscheidet ein Smoke-Test über Erfolg oder Misserfolg | Z2 | T-03 |
+| FR-05 | Ein Release (SemVer-Tag mit Paket) entsteht nur nach meiner Freigabe | Z2 | T-04 |
+| FR-06 | Ein Issue mit dem Label `ai` von mir startet den KI-Agenten | Z3 | AI-1, KI-Auswertung |
+| FR-07 | Der Agent erstellt Branch, Änderung, Tests und Pull Request | Z3 | KI-Auswertung |
+| FR-08 | Pro Durchlauf sind Dauer und Kosten nachvollziehbar | Z3 | KI-Auswertung |
+
+*Tabelle 16: Funktionale Anforderungen*
+
 ### 8.2 Nicht-funktionale Anforderungen
+
+| ID | Anforderung | Ziel | Nachweis |
+| --- | --- | --- | --- |
+| NFR-01 | Keine langlebigen Azure-Credentials in der Pipeline (Login per OIDC) | Z2, Z4 | Konfiguration, ADR 0001 |
+| NFR-02 | Der Agent hat minimale Rechte: kein Push auf `main`, kein Zugriff auf Azure und die Umgebungen | Z4 | T-07, T-08 |
+| NFR-03 | Der Agent reagiert nur auf Issues von mir | Z4 | T-06 |
+| NFR-04 | Pro Durchlauf gibt es Limits für Kosten und Laufzeit | Z3, Z4 | Konfiguration, KI-Auswertung |
+| NFR-05 | Jeder Schritt ist nachvollziehbar (Pipeline-Logs, Pull Requests, Board) | Z1 bis Z4 | Logs, Board |
+| NFR-06 | Keine Secrets und keine echten Tenant- oder Personendaten in den Repositories | Compliance | Security-Job der CI, Review |
+
+*Tabelle 17: Nicht-funktionale Anforderungen*
 
 ## 9. Architektur und Design
 
@@ -366,7 +444,7 @@ Wichtige Entscheidungen werden im RDG-Repository als Architecture Decision Recor
 
 | Entscheidung | Varianten | Entscheid | ADR |
 | --- | --- | --- | --- |
-| Plattform für das automatische Deployment | GitHub Actions, Azure DevOps | GitHub Actions | folgt in Sprint 2 |
+| Plattform für das automatische Deployment | GitHub Actions, Azure DevOps, Deployment von Hand | GitHub Actions | [ADR 0001](https://github.com/RuminahuiM/rdg/pull/1) (Proposed) |
 | Branching-Strategie | GitHub Flow, Git Flow, Trunk-based | folgt | folgt in Sprint 1 (CI-3) |
 | Lizenz | MIT, Apache-2.0, GPL-3.0 | folgt | folgt in Sprint 1 (CI-1) |
 | Login aus der Pipeline nach Azure | OIDC, Client-Secret | folgt | folgt in Sprint 2 (DEP-3) |
@@ -376,8 +454,15 @@ Wichtige Entscheidungen werden im RDG-Repository als Architecture Decision Recor
 
 ### 9.5 Compliance und rechtliche Aspekte
 
-!!! info "Folgt in Sprint 1 und 2"
-    Open-Source-Lizenz, Datenschutz (keine Personendaten an die KI, keine echten Tenant-Daten in den Repositories), Umgang mit KI-generiertem Code.
+| Thema | Umgang in dieser Arbeit |
+| --- | --- |
+| Lizenz | RDG wird Open Source. Die Lizenz wird in Story CI-1 gewählt und als ADR begründet. Dabei prüfe ich auch, ob die Lizenzen der verwendeten Bibliotheken dazu passen |
+| Datenschutz | In den Repositories und in der Testumgebung gibt es keine echten Personendaten. Testbenutzer sind erfunden, Beispiele verwenden `contoso`. Der KI-Agent sieht nur Code und Issue-Texte |
+| Secrets | Keine Passwörter oder Schlüssel in den Repositories. Login nach Azure per OIDC (ADR 0001). Die CI scannt die Infrastruktur auf unsichere Einstellungen |
+| Produktive Umgebung | Die Installation beim ersten Anwender wird in dieser Arbeit nicht verändert. Getestet wird nur im eigenen Test-Tenant |
+| KI-generierter Code und Text | Wird wie jeder andere Beitrag geprüft (Pull Request, CI, Review). Die Nutzung ist in [Kapitel 14.1](#141-deklaration-der-ki-nutzung) deklariert |
+
+*Tabelle 18: Compliance*
 
 ## 10. Umsetzung
 
@@ -398,7 +483,25 @@ Wichtige Entscheidungen werden im RDG-Repository als Architecture Decision Recor
 
 ### 11.1 Teststrategie
 
-!!! info "Folgt in Sprint 1"
+RDG bringt bereits eine CI-Pipeline mit mehreren Testebenen mit. Sie wird in Sprint 1 repariert (CI-4) und ist danach Pflicht für jeden Merge.
+
+| Ebene | Was geprüft wird | Werkzeug | CI-Job |
+| --- | --- | --- | --- |
+| Statische Analyse | PowerShell-Regeln, Formatierung, Linting, Typen | PSScriptAnalyzer, Prettier, ESLint, TypeScript | powershell lint, web |
+| Unit-Tests | Engine, API, Runbooks, Web-App | Pester, Vitest | engine, web |
+| Regel-Konformität | Auswertung der Regeln gleich wie bei Entra ID | eigene Conformance-Suite | engine |
+| Verträge | JSON-Schemas, Fixtures, OpenAPI | Redocly, Schema-Checks | contracts |
+| End-to-End | Web-App gegen gemockte API | Playwright | web |
+| Infrastruktur | Format, Validierung, Lint, Plan mit gemocktem Provider | OpenTofu, TFLint | infra |
+| Sicherheit | unsichere Infrastruktur-Einstellungen, verwundbare Pakete | Trivy, npm audit | security |
+
+*Tabelle 19: Bestehende Testebenen von RDG*
+
+Neu dazu kommen in dieser Arbeit:
+
+- **Smoke-Test nach jedem Deployment** in der Testumgebung (Z2)
+- **Tests der Pipeline selbst**, z.B. ob ein fehlerhafter Pull Request blockiert wird oder der Agent ohne Berechtigung startet (T-01 bis T-08 im [Testprotokoll](nachweise/testprotokoll.md))
+- **Manuelle Tests in der Testumgebung** vor jedem Release, mit Screenshot als Nachweis
 
 ### 11.2 Testprotokoll
 
@@ -435,8 +538,10 @@ Testfälle und Ergebnisse stehen im [Testprotokoll](nachweise/testprotokoll.md).
 
 ### 12.3 Installation und Inbetriebnahme
 
+Die Installation von RDG ist im Install Guide im RDG-Repository beschrieben (`docs/guides/20-install-guide.md`).
+
 !!! info "Folgt in Sprint 2"
-    Wie die Testumgebung aufgesetzt wird und wie die Pipelines eingerichtet werden. Verweis auf den Install Guide im RDG-Repository.
+    Wie die Testumgebung für diese Arbeit aufgesetzt wird und wie die Pipelines (Deployment, Release, KI-Agent) eingerichtet werden.
 
 ### 12.4 Übergabe und offene Punkte
 
@@ -486,7 +591,7 @@ Siehe [Glossar](anhang/glossar.md).
 
 | Nr. | Abbildung | Kapitel |
 | --- | --- | --- |
-| 1 | Gantt-Chart mit Sprints, Releases und Terminen | [3.2](#32-gantt-chart) |
+| 1 | Gantt-Chart mit Sprints, Releases, Absenzen und Terminen | [3.2](#32-gantt-chart) |
 | 2 | Komponenten von RDG (vereinfacht) | [9.1](#91-ausgangslage-architektur-von-rdg) |
 | 3 | Ablauf vom Issue bis zum Release | [9.2](#92-ablauf-von-der-anderung-bis-zum-release) |
 
@@ -508,3 +613,8 @@ Siehe [Glossar](anhang/glossar.md).
 | 12 | Nachweise pro Ziel | [11.3](#113-nachweise-pro-ziel) |
 | 13 | Zielerreichung | [12.1](#121-zielerreichung) |
 | 14 | Repository-Navigation | [14.2](#142-repository-navigation-und-setup) |
+| 15 | Sprint-Kalender mit echten Arbeitstagen | [3.4](#34-kapazitat-und-sprint-kalender) |
+| 16 | Funktionale Anforderungen | [8.1](#81-funktionale-anforderungen) |
+| 17 | Nicht-funktionale Anforderungen | [8.2](#82-nicht-funktionale-anforderungen) |
+| 18 | Compliance | [9.5](#95-compliance-und-rechtliche-aspekte) |
+| 19 | Bestehende Testebenen von RDG | [11.1](#111-teststrategie) |

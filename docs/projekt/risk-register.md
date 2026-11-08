@@ -25,7 +25,7 @@ Ab Score 4 wird das Risiko aktiv beobachtet, ab Score 6 hat es hohe Priorität.
 | R-K01 | Der KI-Teil ist schwieriger als gedacht | K | Mittel | Hoch | 6 | aktiv |
 | R-E01 | Testumgebung oder Test-Tenant nicht rechtzeitig verfügbar | E | Mittel | Hoch | 6 | aktiv |
 | R-E02 | Die Kosten für die KI steigen | E | Niedrig | Mittel | 2 | beobachten |
-| R-S01 | Zu wenig Zeit, Sprints laufen über | S | Mittel | Hoch | 6 | aktiv |
+| R-S01 | Zu wenig Zeit, Sprints laufen über (besonders Sprint 2, Ferien 26.11. bis 06.12.) | S | Hoch | Hoch | 9 | aktiv |
 | R-S02 | Zu wenig Zeit für Doku und Auswertung am Schluss | S | Mittel | Hoch | 6 | aktiv |
 | R-P01 | Berufliche oder private Belastung, Ausfall | P | Mittel | Mittel | 4 | aktiv |
 
@@ -63,7 +63,7 @@ Ab Score 4 wird das Risiko aktiv beobachtet, ab Score 6 hat es hohe Priorität.
 
 ### R-S01 und R-S02: Zu wenig Zeit
 
-- **Massnahme:** Feature-Freeze am 09.01.2027. Doku und Auswertung laufend in jedem Sprint. 20 Prozent Reserve pro Sprint.
+- **Massnahme:** Feature-Freeze am 09.01.2027. Doku und Auswertung laufend in jedem Sprint. 20 Prozent Reserve pro Sprint. Sprint 2 hat wegen der Ferien nur ca. 22 h planbare Zeit: Umfang im Sprint 2 Planning bewusst klein halten, die KI-Stories (SEC, AI-1) notfalls an den Anfang von Sprint 3 schieben.
 - **Plan B:** Should- und Could-Stories streichen, Fokus auf die Must-Ziele.
 
 ### R-P01: Berufliche oder private Belastung
@@ -76,3 +76,4 @@ Ab Score 4 wird das Risiko aktiv beobachtet, ab Score 6 hat es hohe Priorität.
 | Datum | Änderung |
 | --- | --- |
 | 07.11.2026 | Risk Register aus den Risiken im Einreichungsformular aufgebaut und ergänzt |
+| 08.11.2026 | R-S01 von 6 auf 9 erhöht: Ferien vom 26.11. bis 06.12. verkürzen Sprint 2 deutlich |

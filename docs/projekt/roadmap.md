@@ -24,6 +24,10 @@ gantt
     MVP                            :milestone, m1, 2026-11-16, 0d
     MLP                            :milestone, m2, 2026-12-14, 0d
     MMP                            :milestone, m3, 2027-01-22, 0d
+    section Absenzen
+    Ferien                         :done, f1, 2026-11-26, 2026-12-06
+    Weihnachten                    :done, f2, 2026-12-24, 2026-12-26
+    Neujahr                        :done, f3, 2026-12-31, 2027-01-02
     section Termine
     Besprechung 1                  :milestone, b1, 2026-11-16, 0d
     Besprechung 2                  :milestone, b2, 2026-12-14, 0d
