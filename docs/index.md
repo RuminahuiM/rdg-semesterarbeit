@@ -11,7 +11,7 @@
 Diese Seite ist die Dokumentation meiner 4. Semesterarbeit. Sie wird laufend nachgeführt und zeigt jederzeit den aktuellen Stand.
 
 <!-- export:skip -->
-<p class="rdg-downloads">
+<p class="button-row">
 <a class="md-button md-button--primary" href="downloads/rdg-semesterarbeit-gesamtdokument.pdf" download>Gesamtdokument als PDF</a>
 <a class="md-button" href="downloads/rdg-semesterarbeit-gesamtdokument.md" download>Gesamtdokument als Markdown</a>
 </p>
