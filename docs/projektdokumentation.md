@@ -493,7 +493,7 @@ Wichtige Entscheidungen werden im RDG-Repository als Architecture Decision Recor
 
 | Entscheidung | Varianten | Entscheid | ADR |
 | --- | --- | --- | --- |
-| Plattform für das automatische Deployment | GitHub Actions, Azure DevOps, Deployment von Hand | GitHub Actions | [ADR 0001](https://github.com/RuminahuiM/rdg/pull/1) (Proposed) |
+| Plattform für das automatische Deployment | GitHub Actions, Azure DevOps, Deployment von Hand | GitHub Actions | [ADR 0001](https://github.com/RuminahuiM/rdg/blob/main/docs/adr/0001-deploy-test-environment-with-github-actions.md) (Accepted) |
 | Branching-Strategie | GitHub Flow, Git Flow, Trunk-based | folgt | folgt in Sprint 1 (CI-3) |
 | Lizenz | MIT, Apache-2.0, GPL-3.0 | folgt | folgt in Sprint 1 (CI-1) |
 | Login aus der Pipeline nach Azure | OIDC, Client-Secret | folgt | folgt in Sprint 2 (DEP-3) |
