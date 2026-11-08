@@ -10,6 +10,15 @@
 
 Diese Seite ist die Dokumentation meiner 4. Semesterarbeit. Sie wird laufend nachgeführt und zeigt jederzeit den aktuellen Stand.
 
+<!-- export:skip -->
+<p class="rdg-downloads">
+<a class="md-button md-button--primary" href="downloads/rdg-semesterarbeit-gesamtdokument.pdf" download>Gesamtdokument als PDF</a>
+<a class="md-button" href="downloads/rdg-semesterarbeit-gesamtdokument.md" download>Gesamtdokument als Markdown</a>
+</p>
+
+Beide Dateien enthalten alle Seiten dieser Dokumentation in einem Dokument und werden bei jeder Änderung automatisch neu erzeugt. Eine Ansicht im Browser gibt es unter [Gesamtdokument](gesamtdokument.md).
+<!-- /export:skip -->
+
 ## Worum geht es?
 
 RDG (Real Dynamic Groups) ist ein Tool, das ich bei meiner Arbeit gebaut habe. Es pflegt Gruppen in Microsoft 365 nach Regeln und schreibt das Resultat als normale Mitgliederliste in die Gruppe. So funktionieren die Gruppen auch dort, wo Microsoft dynamische Gruppen ablehnt.

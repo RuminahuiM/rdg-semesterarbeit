@@ -24,6 +24,25 @@ Dieses Repository enthält die Dokumentation meiner 4. Semesterarbeit: Projektma
 | `docs/abschluss/` | Schlusspräsentation |
 | `docs/anhang/` | Quellen und Glossar |
 
+## Gesamtdokument (Markdown und PDF)
+
+Für die Abgabe gibt es die ganze Dokumentation auch als eine Datei. Die Startseite hat dafür zwei Buttons.
+
+| Datei | Erzeugt durch |
+| --- | --- |
+| `downloads/rdg-semesterarbeit-gesamtdokument.md` | `hooks/gesamtdokument.py` bei jedem `mkdocs build` |
+| `downloads/rdg-semesterarbeit-gesamtdokument.pdf` | `scripts/build_pdf.py` im Workflow (Chromium druckt die Seite `/gesamtdokument/`) |
+
+Der Hook nimmt alle Seiten in der Reihenfolge von `nav` in `mkdocs.yml`. Eine neue Seite kommt also automatisch ins Gesamtdokument, sobald sie in der Navigation steht. Links zwischen den Seiten werden zu Sprungmarken im Dokument, externe Links bleiben als URL. Text zwischen `<!-- export:skip -->` und `<!-- /export:skip -->` wird nicht übernommen.
+
+PDF lokal erzeugen (optional):
+
+```bash
+pip install playwright && python -m playwright install chromium
+mkdocs build
+python scripts/build_pdf.py site gesamtdokument/ gesamtdokument.pdf
+```
+
 ## Lokal ansehen
 
 ```bash

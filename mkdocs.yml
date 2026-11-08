@@ -64,6 +64,13 @@ validation:
   links:
     anchors: warn
 
+# Gesamtdokument (alle Seiten in einer Datei, als Markdown und PDF), siehe README
+hooks:
+  - hooks/gesamtdokument.py
+
+not_in_nav: |
+  /gesamtdokument.md
+
 # Logo im Header fuehrt zurueck zum Portfolio (Hauptseite)
 extra:
   homepage: https://ruminahuim.github.io/
