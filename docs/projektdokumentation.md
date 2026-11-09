@@ -277,6 +277,7 @@ Sprint 2 ist durch die Ferien deutlich kürzer als die anderen Sprints. Das ist 
 | --- | --- | --- | --- |
 | 21.10.2026 | Thanam Pangri, Marcel Bernet | Kubernetes-Vorgabe | Ausnahme für diese Arbeit |
 | 07.11.2026 | Corrado Parisi | Feedback zum Einreichungsformular | Formular überarbeitet (Version 2) und gesendet, Freigabe ausstehend |
+| 08.11.2026 | Alle Experten | Zwischenstand mit Links | Gepostet, Zuteilung Fachexperte DevOps offen |
 
 *Tabelle 8: Abstimmungen mit den Experten*
 
@@ -495,7 +496,7 @@ Wichtige Entscheidungen werden im RDG-Repository als Architecture Decision Recor
 | --- | --- | --- | --- |
 | Plattform für das automatische Deployment | GitHub Actions, Azure DevOps, Deployment von Hand | GitHub Actions | [ADR 0001](https://github.com/RuminahuiM/rdg/blob/main/docs/adr/0001-deploy-test-environment-with-github-actions.md) (Accepted) |
 | Branching-Strategie | GitHub Flow, Git Flow, Trunk-based | folgt | folgt in Sprint 1 (CI-3) |
-| Lizenz | MIT, Apache-2.0, GPL-3.0 | folgt | folgt in Sprint 1 (CI-1) |
+| Lizenz | MIT, Apache-2.0, GPL-3.0 | MIT | [ADR 0002](https://github.com/RuminahuiM/rdg/pull/3) (Proposed) |
 | Login aus der Pipeline nach Azure | OIDC, Client-Secret | folgt | folgt in Sprint 2 (DEP-3) |
 | KI-Agent in der Pipeline | Claude Code in GitHub Actions, andere Agenten | folgt | folgt in Sprint 2 |
 | Anmeldung und Kosten des Agenten | Claude-Abo (OAuth-Token), API-Key, selbst gehostetes Open-Source-Modell | folgt | folgt in Sprint 2 (AI-9, AI-10) |
@@ -506,7 +507,7 @@ Wichtige Entscheidungen werden im RDG-Repository als Architecture Decision Recor
 
 | Thema | Umgang in dieser Arbeit |
 | --- | --- |
-| Lizenz | RDG wird Open Source. Die Lizenz wird in Story CI-1 gewählt und als ADR begründet. Dabei prüfe ich auch, ob die Lizenzen der verwendeten Bibliotheken dazu passen |
+| Lizenz | RDG wird Open Source unter der MIT-Lizenz (Story CI-1, ADR 0002, noch im Review). Der ADR vergleicht MIT, Apache-2.0 und GPL-3.0, auch im Hinblick auf die Lizenzen der verwendeten Bibliotheken. Rechteinhaber bin ich, weil RDG als Freizeitprojekt entstanden ist |
 | Datenschutz | In den Repositories und in der Testumgebung gibt es keine echten Personendaten. Testbenutzer sind erfunden, Beispiele verwenden `contoso`. Der KI-Agent sieht nur Code und Issue-Texte |
 | Secrets | Keine Passwörter oder Schlüssel in den Repositories. Login nach Azure per OIDC (ADR 0001). Die CI scannt die Infrastruktur auf unsichere Einstellungen |
 | Produktive Umgebung | Die Installation beim ersten Anwender wird in dieser Arbeit nicht verändert. Getestet wird nur im eigenen Test-Tenant |
