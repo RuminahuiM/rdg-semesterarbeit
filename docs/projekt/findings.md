@@ -12,10 +12,10 @@ Probleme und Verbesserungen, die beim Arbeiten auffallen, aber nicht sofort gel�
 | ID | Titel | Schweregrad | Auslöser | Status |
 | --- | --- | --- | --- | --- |
 | F-001 | CI auf GitHub rot: 4 von 6 Jobs schlagen fehl (`infra`, `powershell lint`, `engine` mit 8 fehlschlagenden Sync-Tests, `web` mit 1 fehlschlagendem E2E-Test); `contracts` und `security` sind grün | Must | Sprint 1 (CI-4) | offen |
-| F-002 | `docs/README.md` im RDG-Repository verlinkt auf alte, nicht öffentliche Design-Dokumente | Should | Sprint 1 | in Arbeit (CI-2, RDG-PR #6) |
+| F-002 | `docs/README.md` im RDG-Repository verlinkt auf alte, nicht öffentliche Design-Dokumente | Should | Sprint 1 | gelöst (11.11.2026, CI-2, RDG-PR #6) |
 | F-003 | RDG-Repository hat noch keine Lizenz-Datei | Must | Sprint 1 | gelöst (11.11.2026, MIT-Lizenz mit ADR 0002, RDG-PR #3) |
-| F-004 | Veröffentlichte RDG-Texte enthalten noch Bezüge zum ersten Anwender (Name, Grösse, Testreihenfolge); laut Implementation Plan vor der Veröffentlichung umformulieren | Should | Sprint 1 oder 2, zusammen mit CI-2 | in Arbeit (RDG-PR #7) |
-| F-005 | Die Git-Historie des öffentlichen RDG-Repositorys (erster Import) enthält die alten Bezüge zum ersten Anwender weiterhin; F-004 bereinigt nur den aktuellen Stand | Info | Entscheid durch Maintainer (Historie umschreiben oder akzeptieren) | offen |
+| F-004 | Veröffentlichte RDG-Texte enthalten noch Bezüge zum ersten Anwender (Name, Grösse, Testreihenfolge); laut Implementation Plan vor der Veröffentlichung umformulieren | Should | Sprint 1 oder 2, zusammen mit CI-2 | gelöst (11.11.2026, RDG-PR #7) |
+| F-005 | Die Git-Historie des öffentlichen RDG-Repositorys (erster Import) enthält die alten Bezüge zum ersten Anwender weiterhin; F-004 bereinigt nur den aktuellen Stand | Info | Entscheid durch Maintainer | wird nicht gemacht (11.11.2026: akzeptiert, die Historie bleibt unverändert; ein Umschreiben würde Commit-Links ungültig machen) |
 
 ## Historie
 
@@ -27,3 +27,4 @@ Probleme und Verbesserungen, die beim Arbeiten auffallen, aber nicht sofort gel�
 | 11.11.2026 | F-003 gelöst: MIT-Lizenz im RDG-Repository (PR #3) |
 | 11.11.2026 | F-002 und F-004 in Arbeit: RDG-PRs #6 (Links) und #7 (neutrale Formulierungen) |
 | 11.11.2026 | F-005 bei der Umsetzung von F-004 erfasst |
+| 11.11.2026 | F-002 und F-004 gelöst (RDG-PRs #6 und #7), F-005 akzeptiert |
