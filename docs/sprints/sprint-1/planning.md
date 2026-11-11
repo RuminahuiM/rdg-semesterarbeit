@@ -29,7 +29,7 @@ RDG liegt als sauberes DevOps-Projekt auf GitHub: Projekt-Setup und Board stehen
 | [PM-6](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/17) | Besprechung 1 vorbereiten und protokollieren | PM | 1 | must | offen |
 | [PM-7](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/18) | Sprint 1 Review und Retrospektive | PM | 2 | must | offen |
 
-**Summe Story Points:** 25 (Stand 08.11.: 9 SP Done, 1 SP in Review, siehe [Daily Journal](daily.md))  
+**Summe Story Points:** 25 (Stand 11.11.: 21 SP Done, 1 SP wartet auf die Freigabe, 3 SP offen für den Sprint-Abschluss, siehe [Daily Journal](daily.md))  
 **Verfügbare Kapazität ab 08.11.:** ca. 19 h, davon ca. 15 h planbar (20 Prozent Reserve)
 
 ## 3. Umsetzungsplan
