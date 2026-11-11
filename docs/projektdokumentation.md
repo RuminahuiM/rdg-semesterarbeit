@@ -304,7 +304,11 @@ Risiken werden nach Wahrscheinlichkeit und Auswirkung (je 1 bis 3) bewertet, der
 
 ### 5.3 Eingetretene Risiken und Reaktion
 
-!!! info "Folgt laufend"
+| Risiko | Was passiert ist | Reaktion |
+| --- | --- | --- |
+| R-T03 Pipelines brauchen mehr Arbeit | Die CI war seit dem Import rot, 4 von 6 Jobs, beim Engine-Job mit vier unabhängigen Ursachen (siehe 10.2) | Ein Pull Request pro Job, Diagnose direkt auf dem Runner. Alle Jobs grün am 11.11.2026, drei Tage früher als geplant |
+
+*Tabelle 22: Eingetretene Risiken*
 
 ## 6. Reflexion Projektmanagement
 
@@ -540,6 +544,21 @@ Die Pull-Request-Vorlage fragt diese Punkte als Checkliste ab. Dass `main` techn
 
 ### 10.2 CI-Pipeline (Z1)
 
+Die CI-Pipeline (`ci.yml`) bestand schon aus dem MVP, lief auf GitHub aber nie grün: 4 von 6 Jobs schlugen fehl (F-001). Für die Reparatur habe ich pro Job einen eigenen Pull Request gemacht, damit jede Ursache für sich nachvollziehbar bleibt. Wo die Ursache nicht aus dem Log ersichtlich war, habe ich mit einem temporären Diagnose-Lauf direkt auf dem Runner geprüft, wie sich die Werkzeuge verhalten.
+
+| Job | Ursache | Lösung | Pull Request |
+| --- | --- | --- | --- |
+| `powershell lint` | 7 Warnungen von PSScriptAnalyzer (Einrückung, Leerzeichen, Klammern, Name mit Plural, Parameter nur in einem Scriptblock benutzt) | Code an die Regeln angepasst | [#8](https://github.com/RuminahuiM/rdg/pull/8) |
+| `infra` | `tofu fmt` scheiterte an einer Zeile nach einem Kommentar | Formatierung korrigiert; danach liefen auch TFLint und die Plan-Tests durch | [#10](https://github.com/RuminahuiM/rdg/pull/10) |
+| `web` | Ein E2E-Test hing von der Tageszeit ab ("today" oder "yesterday"); zusätzlich scheiterte die Installation der Browser-Pakete über apt, weil der Ubuntu-Mirror nicht erreichbar war | Test prüft beide Fälle; Browser ohne apt-Pakete installiert | [#11](https://github.com/RuminahuiM/rdg/pull/11) |
+| `engine` | 29 von 591 Tests rot: Pester 5.7 packt eine einzelne Liste nicht mehr aus (22), eine Closure sah eine Variable nicht (4 plus 2 Folgefehler), Datumswerte wurden beim Einlesen umgewandelt (2). Dazu ein echter Fehler im Produkt: `Test-Json` meldet in aktuellen PowerShell-Versionen keine Details hinter `$ref` und `allOf`, die API nannte deshalb bei ungültigen Anfragen das falsche Feld | Tests angepasst; Schema wird vor der Prüfung aufgelöst (`Resolve-DgApiSchemaRef`) | [#9](https://github.com/RuminahuiM/rdg/pull/9) |
+
+*Tabelle 21: Ursachen der roten CI-Jobs*
+
+Ein Versuch, der nichts brachte: Ich hatte zuerst vermutet, dass die neuere PowerShell-Version auf dem Runner (7.6 statt 7.4) schuld ist. Mit PowerShell 7.4 in der CI waren die Fehler aber identisch, die Vermutung war also falsch. Dabei ist aufgefallen, dass der Support für PowerShell 7.4 am 10.11.2026 endete (F-006).
+
+Ergebnis: Alle 6 Jobs sind grün, 591 von 591 Tests bestehen, die Testabdeckung der Engine liegt bei 92 %. Ein Durchlauf dauert rund 1,5 Minuten, weil die Jobs parallel laufen; der längste Job ist `web` mit den End-to-End-Tests.
+
 ### 10.3 Deployment und Release (Z2)
 
 ### 10.4 KI-Pipeline (Z3)
@@ -687,3 +706,5 @@ Siehe [Glossar](anhang/glossar.md).
 | 18 | Compliance | [9.5](#95-compliance-und-rechtliche-aspekte) |
 | 19 | Bestehende Testebenen von RDG | [11.1](#111-teststrategie) |
 | 20 | Arbeitsregeln im RDG-Repository | [10.1](#101-repository-und-arbeitsregeln-z1) |
+| 21 | Ursachen der roten CI-Jobs | [10.2](#102-ci-pipeline-z1) |
+| 22 | Eingetretene Risiken | [5.3](#53-eingetretene-risiken-und-reaktion) |

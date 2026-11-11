@@ -21,7 +21,7 @@ Ab Score 4 wird das Risiko aktiv beobachtet, ab Score 6 hat es hohe Priorität.
 | --- | --- | --- | --- | --- | --- | --- |
 | R-T01 | Die KI macht falsche Änderungen | T | Hoch | Mittel | 6 | aktiv |
 | R-T02 | Missbrauch über Issue-Texte (Prompt Injection) oder zu viele Rechte für den Agenten | T | Mittel | Hoch | 6 | aktiv |
-| R-T03 | Die bestehenden Pipelines laufen nicht und brauchen mehr Arbeit als gedacht | T | Mittel | Mittel | 4 | aktiv |
+| R-T03 | Die bestehenden Pipelines laufen nicht und brauchen mehr Arbeit als gedacht | T | Mittel | Mittel | 4 | eingetreten, bewältigt (11.11.2026) |
 | R-K01 | Der KI-Teil ist schwieriger als gedacht | K | Mittel | Hoch | 6 | aktiv |
 | R-E01 | Testumgebung oder Test-Tenant nicht rechtzeitig verfügbar | E | Mittel | Hoch | 6 | aktiv |
 | R-E02 | Die Kosten für die KI steigen | E | Niedrig | Mittel | 2 | beobachten |
@@ -46,6 +46,7 @@ Ab Score 4 wird das Risiko aktiv beobachtet, ab Score 6 hat es hohe Priorität.
 
 - **Massnahme:** CI-Pipeline als erste Story in Sprint 1. Fehler früh sichtbar machen.
 - **Plan B:** Nicht nötige Prüfungen vorerst als "nicht blockierend" markieren und als Finding nachziehen.
+- **Eingetreten (11.11.2026):** 4 von 6 Jobs rot, beim Engine-Job mit mehreren unabhängigen Ursachen. Die Massnahme hat gegriffen: ein PR pro Job und Diagnose-Läufe auf dem Runner. Plan B war nicht nötig, alle Jobs sind grün und bleiben blockierend.
 
 ### R-K01: Der KI-Teil ist schwieriger als gedacht
 
@@ -79,3 +80,4 @@ Ab Score 4 wird das Risiko aktiv beobachtet, ab Score 6 hat es hohe Priorität.
 | 07.11.2026 | Risk Register aus den Risiken im Einreichungsformular aufgebaut und ergänzt |
 | 08.11.2026 | R-S01 von 6 auf 9 erhöht: Ferien vom 26.11. bis 06.12. verkürzen Sprint 2 deutlich |
 | 08.11.2026 | R-T02 um Idee KI-Intake-Chat ergänzt, R-E02 um Betrieb über das Abo und Open-Source-Modelle ergänzt |
+| 11.11.2026 | R-T03 eingetreten und bewältigt: CI-Reparatur in 5 Pull Requests, alle Jobs grün |
