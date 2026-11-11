@@ -353,7 +353,7 @@ Wie gut eine Auslieferung funktioniert, misst die DORA-Forschung mit fünf Kennz
 
 ### 7.3 GitHub Flow, Conventional Commits und SemVer
 
-- **GitHub Flow:** Für jede Änderung ein kurzer Branch von `main`, dann ein Pull Request, Prüfung, Merge und Löschen des Branches.[^flow] `main` ist immer lauffähig. Für ein kleines Projekt ohne parallele Release-Linien ist das einfacher als Git Flow. Der Entscheid ist in Story CI-3 als [ADR 0003](https://github.com/RuminahuiM/rdg/pull/5) festgehalten.
+- **GitHub Flow:** Für jede Änderung ein kurzer Branch von `main`, dann ein Pull Request, Prüfung, Merge und Löschen des Branches.[^flow] `main` ist immer lauffähig. Für ein kleines Projekt ohne parallele Release-Linien ist das einfacher als Git Flow. Der Entscheid ist in Story CI-3 als [ADR 0003](https://github.com/RuminahuiM/rdg/blob/main/docs/adr/0003-branching-github-flow.md) festgehalten.
 - **Conventional Commits:** Commit-Nachrichten haben eine feste Form wie `feat: ...`, `fix: ...` oder `docs: ...`.[^cc] So kann man aus der Historie ablesen, was sich geändert hat, und die nächste Versionsnummer ableiten.
 - **Semantic Versioning (SemVer):** Versionen haben die Form `MAJOR.MINOR.PATCH`.[^semver] MAJOR steigt bei inkompatiblen Änderungen, MINOR bei neuen Funktionen, PATCH bei Fehlerkorrekturen. Vorabversionen wie `0.1.0-eval.4` sind erlaubt und zeigen, dass RDG noch nicht stabil ist.
 
@@ -495,7 +495,7 @@ Wichtige Entscheidungen werden im RDG-Repository als Architecture Decision Recor
 | Entscheidung | Varianten | Entscheid | ADR |
 | --- | --- | --- | --- |
 | Plattform für das automatische Deployment | GitHub Actions, Azure DevOps, Deployment von Hand | GitHub Actions | [ADR 0001](https://github.com/RuminahuiM/rdg/blob/main/docs/adr/0001-deploy-test-environment-with-github-actions.md) (Accepted) |
-| Branching-Strategie | GitHub Flow, Git Flow, Trunk-based | GitHub Flow | [ADR 0003](https://github.com/RuminahuiM/rdg/pull/5) (Proposed, im Review) |
+| Branching-Strategie | GitHub Flow, Git Flow, Trunk-based | GitHub Flow | [ADR 0003](https://github.com/RuminahuiM/rdg/blob/main/docs/adr/0003-branching-github-flow.md) (Accepted) |
 | Lizenz | MIT, Apache-2.0, GPL-3.0 | MIT | [ADR 0002](https://github.com/RuminahuiM/rdg/blob/main/docs/adr/0002-license-mit.md) (Accepted) |
 | Login aus der Pipeline nach Azure | OIDC, Client-Secret | folgt | folgt in Sprint 2 (DEP-3) |
 | KI-Agent in der Pipeline | Claude Code in GitHub Actions, andere Agenten | folgt | folgt in Sprint 2 |
@@ -522,7 +522,7 @@ Wichtige Entscheidungen werden im RDG-Repository als Architecture Decision Recor
 
 ### 10.1 Repository und Arbeitsregeln (Z1)
 
-Das RDG-Repository ist öffentlich und unter der MIT-Lizenz veröffentlicht ([ADR 0002](https://github.com/RuminahuiM/rdg/blob/main/docs/adr/0002-license-mit.md)). Für die Arbeitsregeln habe ich GitHub Flow, Git Flow und Trunk-based Development verglichen und mich für GitHub Flow entschieden ([ADR 0003](https://github.com/RuminahuiM/rdg/pull/5)). Ausschlaggebend war, dass jede Änderung, ob von mir oder vom KI-Agenten, denselben Weg über einen Pull Request nimmt. Der Pull Request ist damit auch die Kontrollstelle für den Agenten.
+Das RDG-Repository ist öffentlich und unter der MIT-Lizenz veröffentlicht ([ADR 0002](https://github.com/RuminahuiM/rdg/blob/main/docs/adr/0002-license-mit.md)). Für die Arbeitsregeln habe ich GitHub Flow, Git Flow und Trunk-based Development verglichen und mich für GitHub Flow entschieden ([ADR 0003](https://github.com/RuminahuiM/rdg/blob/main/docs/adr/0003-branching-github-flow.md)). Ausschlaggebend war, dass jede Änderung, ob von mir oder vom KI-Agenten, denselben Weg über einen Pull Request nimmt. Der Pull Request ist damit auch die Kontrollstelle für den Agenten.
 
 Die Regeln stehen in der `CONTRIBUTING.md` des RDG-Repositorys:
 
@@ -640,7 +640,8 @@ Die Installation von RDG ist im Install Guide im RDG-Repository beschrieben (`do
 | Was | Wo |
 | --- | --- |
 | Produkt-Code von RDG | [github.com/RuminahuiM/rdg](https://github.com/RuminahuiM/rdg) |
-| Installationsanleitung RDG | `docs/guides/20-install-guide.md` im RDG-Repository |
+| Doku von RDG (Design, Guides, ADRs) | [docs/ im RDG-Repository](https://github.com/RuminahuiM/rdg/tree/main/docs) |
+| Installationsanleitung RDG | [Install Guide](https://github.com/RuminahuiM/rdg/blob/main/docs/guides/20-install-guide.md) |
 | Diese Dokumentation | [github.com/RuminahuiM/rdg-semesterarbeit](https://github.com/RuminahuiM/rdg-semesterarbeit), lokal ansehen mit `pip install -r requirements.txt` und `mkdocs serve` |
 | Kanban-Board | [GitHub Projects](https://github.com/users/RuminahuiM/projects/1) |
 
