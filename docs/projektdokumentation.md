@@ -540,7 +540,21 @@ Die Regeln stehen in der `CONTRIBUTING.md` des RDG-Repositorys:
 
 *Tabelle 20: Arbeitsregeln im RDG-Repository*
 
-Die Pull-Request-Vorlage fragt diese Punkte als Checkliste ab. Dass `main` technisch geschützt ist und ein fehlerhafter Pull Request blockiert wird, folgt mit Story CI-5.
+Die Pull-Request-Vorlage fragt diese Punkte als Checkliste ab.
+
+Technisch geschützt ist `main` durch ein Ruleset (Story CI-5). Es liegt als Code im Repository ([`.github/rulesets/main.json`](https://github.com/RuminahuiM/rdg/blob/main/.github/rulesets/main.json)) und ist in der `CONTRIBUTING.md` beschrieben:
+
+| Regel | Einstellung |
+| --- | --- |
+| Änderungen an `main` | nur über Pull Request |
+| Pflicht-Checks | alle 6 CI-Jobs |
+| Pflicht-Freigaben | keine, weil ich der einzige Maintainer bin und GitHub keine Freigabe des eigenen Pull Requests erlaubt |
+| Force-Push und Löschen von `main` | blockiert |
+| Ausnahmen (Bypass) | keine, auch nicht für mich als Owner |
+
+*Tabelle 23: Ruleset für main*
+
+Den Import der JSON-Datei hat GitHub zuerst abgelehnt, weil die Felder `source_type` und `source` fehlten. Nach der Ergänzung ging der Import durch. Der Nachweis ist Testfall T-01: Ein Pull Request mit einem absichtlich fehlschlagenden Test wird rot, und GitHub verweigert den Merge.
 
 ### 10.2 CI-Pipeline (Z1)
 
@@ -715,3 +729,4 @@ Siehe [Glossar](anhang/glossar.md).
 | 20 | Arbeitsregeln im RDG-Repository | [10.1](#101-repository-und-arbeitsregeln-z1) |
 | 21 | Ursachen der roten CI-Jobs | [10.2](#102-ci-pipeline-z1) |
 | 22 | Eingetretene Risiken | [5.3](#53-eingetretene-risiken-und-reaktion) |
+| 23 | Ruleset für main | [10.1](#101-repository-und-arbeitsregeln-z1) |

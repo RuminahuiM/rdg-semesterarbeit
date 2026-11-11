@@ -6,7 +6,7 @@ Verbindet die Ziele mit Stories, Sprints, Nachweisen und den Bewertungskriterien
 
 | Ziel | Sprint | Stories | Nachweis | Status |
 | --- | --- | --- | --- | --- |
-| Z1 Sauberes DevOps-Projekt | 1 (CI-6 in 2) | CI-1 bis CI-6 | Fehlerhafter Pull Request wird blockiert | in Arbeit |
+| Z1 Sauberes DevOps-Projekt | 1 (CI-6 in 2) | CI-1 bis CI-6 | Fehlerhafter Pull Request wird blockiert ([T-01](../nachweise/testprotokoll.md), bestanden 11.11.2026) | Nachweis erbracht, CI-6 offen |
 | Z2 Automatisches Deployment und Freigabe | 2 | DEP-1 bis DEP-6, ADR 0001 | 5 automatische Deployments, 1 freigegebenes Release | offen |
 | Z3 KI-Wartung als Versuch | 2, 3 | AI-1 bis AI-10 (AI-8 wont) | Auswertung der 8 Test-Issues | offen |
 | Z4 Die KI bleibt eingeschränkt | 2, 3 | SEC-1 bis SEC-5 | Prompt-Injection-Test ohne unerlaubte Aktion | offen |
