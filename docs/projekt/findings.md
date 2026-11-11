@@ -17,6 +17,7 @@ Probleme und Verbesserungen, die beim Arbeiten auffallen, aber nicht sofort gel�
 | F-004 | Veröffentlichte RDG-Texte enthalten noch Bezüge zum ersten Anwender (Name, Grösse, Testreihenfolge); laut Implementation Plan vor der Veröffentlichung umformulieren | Should | Sprint 1 oder 2, zusammen mit CI-2 | gelöst (11.11.2026, RDG-PR #7) |
 | F-005 | Die Git-Historie des öffentlichen RDG-Repositorys (erster Import) enthält die alten Bezüge zum ersten Anwender weiterhin; F-004 bereinigt nur den aktuellen Stand | Info | Entscheid durch Maintainer | wird nicht gemacht (11.11.2026: akzeptiert, die Historie bleibt unverändert; ein Umschreiben würde Commit-Links ungültig machen) |
 | F-006 | RDG läuft auf PowerShell 7.4, dessen Support am 10.11.2026 endete; die CI läuft bereits auf 7.6. Laufzeit in Azure Functions und Automation auf 7.6 umstellen | Should | Sprint 2 (Kandidat für ein Test-Issue des KI-Agenten) | als Issue erfasst ([RDG #14](https://github.com/RuminahuiM/rdg/issues/14)) |
+| F-007 | Die API nennt bei Fehlern in verschachtelten Objekten (z.B. `target.mode`) kein Feld, sondern `(body)`: `Test-Json` in PowerShell 7.6 liefert dafür keine Meldung. Felder auf oberster Ebene werden seit RDG-PR #9 wieder genannt | May | zusammen mit F-006 | als Issue erfasst ([RDG #14](https://github.com/RuminahuiM/rdg/issues/14)) |
 
 ## Historie
 
@@ -30,3 +31,4 @@ Probleme und Verbesserungen, die beim Arbeiten auffallen, aber nicht sofort gel�
 | 11.11.2026 | F-005 bei der Umsetzung von F-004 erfasst |
 | 11.11.2026 | F-002 und F-004 gelöst (RDG-PRs #6 und #7), F-005 akzeptiert |
 | 11.11.2026 | F-001: Ursachen gefunden und behoben (siehe Projektdokumentation 10.2); F-006 bei der CI-Reparatur erfasst |
+| 11.11.2026 | Review der CI-Reparatur: Web-Test mit fester Uhrzeit (RDG-PR #15), Schema-Auflösung abgesichert; F-007 erfasst |

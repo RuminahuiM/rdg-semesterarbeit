@@ -550,14 +550,21 @@ Die CI-Pipeline (`ci.yml`) bestand schon aus dem MVP, lief auf GitHub aber nie g
 | --- | --- | --- | --- |
 | `powershell lint` | 7 Warnungen von PSScriptAnalyzer (Einrückung, Leerzeichen, Klammern, Name mit Plural, Parameter nur in einem Scriptblock benutzt) | Code an die Regeln angepasst | [#8](https://github.com/RuminahuiM/rdg/pull/8) |
 | `infra` | `tofu fmt` scheiterte an einer Zeile nach einem Kommentar | Formatierung korrigiert; danach liefen auch TFLint und die Plan-Tests durch | [#10](https://github.com/RuminahuiM/rdg/pull/10) |
-| `web` | Ein E2E-Test hing von der Tageszeit ab ("today" oder "yesterday"); zusätzlich scheiterte die Installation der Browser-Pakete über apt, weil der Ubuntu-Mirror nicht erreichbar war | Test prüft beide Fälle; Browser ohne apt-Pakete installiert | [#11](https://github.com/RuminahuiM/rdg/pull/11) |
-| `engine` | 29 von 591 Tests rot: Pester 5.7 packt eine einzelne Liste nicht mehr aus (22), eine Closure sah eine Variable nicht (4 plus 2 Folgefehler), Datumswerte wurden beim Einlesen umgewandelt (2). Dazu ein echter Fehler im Produkt: `Test-Json` meldet in aktuellen PowerShell-Versionen keine Details hinter `$ref` und `allOf`, die API nannte deshalb bei ungültigen Anfragen das falsche Feld | Tests angepasst; Schema wird vor der Prüfung aufgelöst (`Resolve-DgApiSchemaRef`) | [#9](https://github.com/RuminahuiM/rdg/pull/9) |
+| `web` | Ein E2E-Test hing von der Tageszeit ab ("today" oder "yesterday"); zusätzlich scheiterte die Installation der Browser-Pakete über apt, weil der Ubuntu-Mirror nicht erreichbar war | Test mit fester Uhrzeit; Browser ohne apt-Pakete installiert | [#11](https://github.com/RuminahuiM/rdg/pull/11), [#15](https://github.com/RuminahuiM/rdg/pull/15) |
+| `engine` | 29 von 591 Tests rot: Pester 5.7 packt eine einzelne Liste nicht mehr aus (22), eine Closure sah eine Variable nicht (4 plus 2 Folgefehler), Datumswerte wurden beim Einlesen umgewandelt (2). Dazu ein echter Fehler im Produkt: `Test-Json` meldet in aktuellen PowerShell-Versionen keine Details hinter `$ref` und `allOf`, die API nannte deshalb bei ungültigen Anfragen das falsche Feld | Tests angepasst; Schema wird vor der Prüfung aufgelöst (`Resolve-DgApiSchemaRef`), mit neuen Tests gegen alle API-Beispiele des Vertrags | [#9](https://github.com/RuminahuiM/rdg/pull/9) |
 
 *Tabelle 21: Ursachen der roten CI-Jobs*
 
 Ein Versuch, der nichts brachte: Ich hatte zuerst vermutet, dass die neuere PowerShell-Version auf dem Runner (7.6 statt 7.4) schuld ist. Mit PowerShell 7.4 in der CI waren die Fehler aber identisch, die Vermutung war also falsch. Dabei ist aufgefallen, dass der Support für PowerShell 7.4 am 10.11.2026 endete (F-006).
 
-Ergebnis: Alle 6 Jobs sind grün, 591 von 591 Tests bestehen, die Testabdeckung der Engine liegt bei 92 %. Ein Durchlauf dauert rund 1,5 Minuten, weil die Jobs parallel laufen; der längste Job ist `web` mit den End-to-End-Tests.
+Nach der Reparatur habe ich alle Änderungen noch einmal darauf geprüft, ob sie das Problem lösen oder nur die CI grün machen. Zwei Stellen habe ich daraufhin verbessert:
+
+- Der E2E-Test akzeptierte zuerst sowohl "today" als auch "yesterday". Das hat die Prüfung abgeschwächt. Jetzt läuft der Test mit fester Uhrzeit und prüft den genauen Text ([#15](https://github.com/RuminahuiM/rdg/pull/15)).
+- Das Auflösen des Schemas hat zuerst alle Teile zusammengeführt. Das kann in Sonderfällen ändern, was gültig ist. Jetzt werden Teile nur zusammengeführt, wenn sich ihre Bedeutung nicht ändert, und ein neuer Test prüft alle 17 API-Beispiele gegen den Vertrag.
+
+Eine Grenze bleibt: Fehler in verschachtelten Objekten (z.B. `target.mode`) meldet die API weiterhin ohne Feldnamen. Das hängt an `Test-Json` in PowerShell 7.6 und ist als F-007 erfasst.
+
+Ergebnis: Alle 6 Jobs sind grün, 612 von 612 Tests bestehen (21 neue), die Testabdeckung der Engine liegt bei 93 %. Ein Durchlauf dauert rund 1,5 Minuten, weil die Jobs parallel laufen; der längste Job ist `web` mit den End-to-End-Tests.
 
 ### 10.3 Deployment und Release (Z2)
 
