@@ -11,7 +11,7 @@
 | Version | Datum | Inhalt |
 | --- | --- | --- |
 | 1 | 21.10.2026 | Erste Einreichung im Teams-Kanal |
-| 2 | 07.11.2026 | Im Teams-Thread an Corrado Parisi gesendet, Freigabe ausstehend. Überarbeitet nach dem Feedback des PM-Experten: Mindestumfang CI/CD, KI-Wartung als Versuch mit Auswertung, Kubernetes-Ausnahme, Ablauf vom Pull Request bis zum Release, Feature-Freeze, laufende Dokumentation |
+| 2 | 07.11.2026 | Im Teams-Thread an Corrado Parisi gesendet, am 09.11.2026 freigegeben. Überarbeitet nach dem Feedback des PM-Experten: Mindestumfang CI/CD, KI-Wartung als Versuch mit Auswertung, Kubernetes-Ausnahme, Ablauf vom Pull Request bis zum Release, Feature-Freeze, laufende Dokumentation |
 
 Unten steht der Text der Version 2.
 

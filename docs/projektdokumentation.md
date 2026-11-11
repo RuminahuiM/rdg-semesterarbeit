@@ -68,7 +68,7 @@ Ich möchte RDG darum als Open-Source-Projekt veröffentlichen, das möglichst w
 | --- | --- | --- |
 | Ich (Studierender) | Product Owner, Scrum Master, Developer | Erfolgreiche Semesterarbeit, RDG langfristig wartbar machen |
 | Corrado Parisi | Experte Projektmanagement | Sauberes agiles Vorgehen, nachvollziehbare Planung und Steuerung |
-| Thanam Pangri, Patrick (Zuteilung wird bestätigt) | Experten DevOps | Fachlich korrekte Umsetzung von CI/CD, Deployment und KI-Pipeline |
+| Thanam Pangri | Experte DevOps (Fachexperte) | Fachlich korrekte Umsetzung von CI/CD, Deployment und KI-Pipeline |
 | Erster Anwender von RDG (mein Arbeitgeber) | Kunde | RDG weiter nutzen können, auch ohne mich |
 | Open-Source-Community | spätere Nutzer und Mitwirkende | Verständliches, sicheres und gepflegtes Tool |
 
@@ -278,6 +278,7 @@ Sprint 2 ist durch die Ferien deutlich kürzer als die anderen Sprints. Das ist 
 | 21.10.2026 | Thanam Pangri, Marcel Bernet | Kubernetes-Vorgabe | Ausnahme für diese Arbeit |
 | 07.11.2026 | Corrado Parisi | Feedback zum Einreichungsformular | Formular überarbeitet (Version 2) und gesendet, Freigabe ausstehend |
 | 08.11.2026 | Alle Experten | Zwischenstand mit Links | Gepostet, Zuteilung Fachexperte DevOps offen |
+| 09.11.2026 | Corrado Parisi, Thanam Pangri | Freigabe des Formulars (Version 2) und fachliche Betreuung | Formular freigegeben ohne Auflagen; Thanam Pangri betreut die Arbeit fachlich |
 
 *Tabelle 8: Abstimmungen mit den Experten*
 

@@ -20,7 +20,7 @@ RDG liegt als sauberes DevOps-Projekt auf GitHub: Projekt-Setup und Board stehen
 | [PM-2](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/8) | Kanban-Board einrichten | PM | 2 | must | Done |
 | [PM-3](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/9) | Product Backlog erstellen und Sprint 1 ausdefinieren | PM | 3 | must | Done |
 | [PM-4](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/10) | Sprint 1 Planning dokumentieren | PM | 1 | must | Done |
-| [PM-5](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/11) | Formular Version 2 einreichen und Freigabe einholen | PM | 1 | must | eingereicht, wartet auf Freigabe der Experten |
+| [PM-5](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/11) | Formular Version 2 einreichen und Freigabe einholen | PM | 1 | must | Done |
 | [CI-1](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/12) | Lizenz festlegen und ergänzen | Z1 | 1 | must | Done |
 | [CI-2](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/13) | Tote Links in der RDG-Doku entfernen | Z1 | 1 | should | Done |
 | [CI-3](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/14) | Arbeitsregeln festlegen (Branching, Commits, Versionen) | Z1 | 2 | must | Done |
@@ -29,7 +29,7 @@ RDG liegt als sauberes DevOps-Projekt auf GitHub: Projekt-Setup und Board stehen
 | [PM-6](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/17) | Besprechung 1 vorbereiten und protokollieren | PM | 1 | must | offen |
 | [PM-7](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/18) | Sprint 1 Review und Retrospektive | PM | 2 | must | offen |
 
-**Summe Story Points:** 25 (Stand 11.11.: 21 SP Done, 1 SP wartet auf die Freigabe, 3 SP offen für den Sprint-Abschluss, siehe [Daily Journal](daily.md))  
+**Summe Story Points:** 25 (Stand 11.11.: 22 SP Done, 3 SP offen für den Sprint-Abschluss, siehe [Daily Journal](daily.md))  
 **Verfügbare Kapazität ab 08.11.:** ca. 19 h, davon ca. 15 h planbar (20 Prozent Reserve)
 
 ## 3. Umsetzungsplan

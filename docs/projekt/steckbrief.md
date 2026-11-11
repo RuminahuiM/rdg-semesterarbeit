@@ -14,7 +14,7 @@ Zentrale Stammdaten der Semesterarbeit.
 | Semester | 4 |
 | Form | Solo |
 | Themenfelder | Projektmanagement (Pflicht), DevOps |
-| Experten | Projektmanagement: Corrado Parisi. Fachlich (DevOps): Thanam Pangri und Patrick (Zuteilung wird bestätigt) |
+| Experten | Projektmanagement: Corrado Parisi. Fachlich (DevOps): Thanam Pangri (bestätigt am 09.11.2026) |
 | Zeitbudget | ca. 50 Stunden (Vorgabe TBZ), max. 12 Wochen |
 
 ## Termine
