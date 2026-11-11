@@ -353,7 +353,7 @@ Wie gut eine Auslieferung funktioniert, misst die DORA-Forschung mit fünf Kennz
 
 ### 7.3 GitHub Flow, Conventional Commits und SemVer
 
-- **GitHub Flow:** Für jede Änderung ein kurzer Branch von `main`, dann ein Pull Request, Prüfung, Merge und Löschen des Branches.[^flow] `main` ist immer lauffähig. Für ein kleines Projekt ohne parallele Release-Linien ist das einfacher als Git Flow. Der Entscheid wird in Story CI-3 als ADR festgehalten.
+- **GitHub Flow:** Für jede Änderung ein kurzer Branch von `main`, dann ein Pull Request, Prüfung, Merge und Löschen des Branches.[^flow] `main` ist immer lauffähig. Für ein kleines Projekt ohne parallele Release-Linien ist das einfacher als Git Flow. Der Entscheid ist in Story CI-3 als [ADR 0003](https://github.com/RuminahuiM/rdg/pull/5) festgehalten.
 - **Conventional Commits:** Commit-Nachrichten haben eine feste Form wie `feat: ...`, `fix: ...` oder `docs: ...`.[^cc] So kann man aus der Historie ablesen, was sich geändert hat, und die nächste Versionsnummer ableiten.
 - **Semantic Versioning (SemVer):** Versionen haben die Form `MAJOR.MINOR.PATCH`.[^semver] MAJOR steigt bei inkompatiblen Änderungen, MINOR bei neuen Funktionen, PATCH bei Fehlerkorrekturen. Vorabversionen wie `0.1.0-eval.4` sind erlaubt und zeigen, dass RDG noch nicht stabil ist.
 
@@ -495,8 +495,8 @@ Wichtige Entscheidungen werden im RDG-Repository als Architecture Decision Recor
 | Entscheidung | Varianten | Entscheid | ADR |
 | --- | --- | --- | --- |
 | Plattform für das automatische Deployment | GitHub Actions, Azure DevOps, Deployment von Hand | GitHub Actions | [ADR 0001](https://github.com/RuminahuiM/rdg/blob/main/docs/adr/0001-deploy-test-environment-with-github-actions.md) (Accepted) |
-| Branching-Strategie | GitHub Flow, Git Flow, Trunk-based | folgt | folgt in Sprint 1 (CI-3) |
-| Lizenz | MIT, Apache-2.0, GPL-3.0 | MIT | [ADR 0002](https://github.com/RuminahuiM/rdg/pull/3) (Proposed) |
+| Branching-Strategie | GitHub Flow, Git Flow, Trunk-based | GitHub Flow | [ADR 0003](https://github.com/RuminahuiM/rdg/pull/5) (Proposed, im Review) |
+| Lizenz | MIT, Apache-2.0, GPL-3.0 | MIT | [ADR 0002](https://github.com/RuminahuiM/rdg/blob/main/docs/adr/0002-license-mit.md) (Accepted) |
 | Login aus der Pipeline nach Azure | OIDC, Client-Secret | folgt | folgt in Sprint 2 (DEP-3) |
 | KI-Agent in der Pipeline | Claude Code in GitHub Actions, andere Agenten | folgt | folgt in Sprint 2 |
 | Anmeldung und Kosten des Agenten | Claude-Abo (OAuth-Token), API-Key, selbst gehostetes Open-Source-Modell | folgt | folgt in Sprint 2 (AI-9, AI-10) |
@@ -507,7 +507,7 @@ Wichtige Entscheidungen werden im RDG-Repository als Architecture Decision Recor
 
 | Thema | Umgang in dieser Arbeit |
 | --- | --- |
-| Lizenz | RDG wird Open Source unter der MIT-Lizenz (Story CI-1, ADR 0002, noch im Review). Der ADR vergleicht MIT, Apache-2.0 und GPL-3.0, auch im Hinblick auf die Lizenzen der verwendeten Bibliotheken. Rechteinhaber bin ich, weil RDG als Freizeitprojekt entstanden ist |
+| Lizenz | RDG ist Open Source unter der MIT-Lizenz (Story CI-1, ADR 0002). Die Datei `LICENSE` liegt im Root des RDG-Repositorys, README und `CONTRIBUTING.md` nennen die Lizenz. Beiträge stehen unter derselben Lizenz. Der ADR vergleicht MIT, Apache-2.0 und GPL-3.0, auch im Hinblick auf die Lizenzen der verwendeten Bibliotheken. Rechteinhaber bin ich, weil RDG als Freizeitprojekt entstanden ist |
 | Datenschutz | In den Repositories und in der Testumgebung gibt es keine echten Personendaten. Testbenutzer sind erfunden, Beispiele verwenden `contoso`. Der KI-Agent sieht nur Code und Issue-Texte |
 | Secrets | Keine Passwörter oder Schlüssel in den Repositories. Login nach Azure per OIDC (ADR 0001). Die CI scannt die Infrastruktur auf unsichere Einstellungen |
 | Produktive Umgebung | Die Installation beim ersten Anwender wird in dieser Arbeit nicht verändert. Getestet wird nur im eigenen Test-Tenant |
@@ -521,6 +521,22 @@ Wichtige Entscheidungen werden im RDG-Repository als Architecture Decision Recor
     Pro Teil: was umgesetzt wurde, wichtige Code- oder Konfigurationsausschnitte, Screenshots.
 
 ### 10.1 Repository und Arbeitsregeln (Z1)
+
+Das RDG-Repository ist öffentlich und unter der MIT-Lizenz veröffentlicht ([ADR 0002](https://github.com/RuminahuiM/rdg/blob/main/docs/adr/0002-license-mit.md)). Für die Arbeitsregeln habe ich GitHub Flow, Git Flow und Trunk-based Development verglichen und mich für GitHub Flow entschieden ([ADR 0003](https://github.com/RuminahuiM/rdg/pull/5)). Ausschlaggebend war, dass jede Änderung, ob von mir oder vom KI-Agenten, denselben Weg über einen Pull Request nimmt. Der Pull Request ist damit auch die Kontrollstelle für den Agenten.
+
+Die Regeln stehen in der `CONTRIBUTING.md` des RDG-Repositorys:
+
+| Regel | Umsetzung |
+| --- | --- |
+| Ablauf | Issue, Branch `<type>/<slug>` von `main`, Commits, Pull Request, grüne CI, Review, Merge |
+| Commits und PR-Titel | Conventional Commits, z.B. `fix(api): return 412 on stale ETag` |
+| Merge | Squash als Standard, Merge-Commit und Rebase erlaubt; Branches werden nach dem Merge gelöscht |
+| Prüfung vor dem Merge | Grüne CI und Self-Review. Ein Pflicht-Approval würde mich als einzigen Maintainer blockieren. Pull Requests des Agenten merge immer ich |
+| Versionen | SemVer, Release per Tag `vMAJOR.MINOR.PATCH` auf `main`; `feat` erhöht MINOR, `fix` PATCH, Breaking Change MAJOR |
+
+*Tabelle 20: Arbeitsregeln im RDG-Repository*
+
+Die Pull-Request-Vorlage fragt diese Punkte als Checkliste ab. Dass `main` technisch geschützt ist und ein fehlerhafter Pull Request blockiert wird, folgt mit Story CI-5.
 
 ### 10.2 CI-Pipeline (Z1)
 
@@ -669,3 +685,4 @@ Siehe [Glossar](anhang/glossar.md).
 | 17 | Nicht-funktionale Anforderungen | [8.2](#82-nicht-funktionale-anforderungen) |
 | 18 | Compliance | [9.5](#95-compliance-und-rechtliche-aspekte) |
 | 19 | Bestehende Testebenen von RDG | [11.1](#111-teststrategie) |
+| 20 | Arbeitsregeln im RDG-Repository | [10.1](#101-repository-und-arbeitsregeln-z1) |
