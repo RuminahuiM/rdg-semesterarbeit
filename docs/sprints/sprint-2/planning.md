@@ -45,8 +45,8 @@ Sprint 1 hatte eine Velocity von 25 SP in ca. 16 h, also ca. 1.5 SP pro Stunde. 
 
 | Tag | Stories |
 | --- | --- |
-| Do 12.11. | PM-8 Planning |
-| Sa 14.11. | DEP-1 Tenant und Azure-Abo, Start DEP-2 Bootstrap |
+| Do 12.11. | PM-8 Planning, Start DEP-1 Tenant und Azure-Abo |
+| Sa 14.11. | DEP-1 abschliessen, DEP-2 Bootstrap |
 | So 15.11. | DEP-2 abschliessen, DEP-3 OIDC |
 | Mo 16.11. | Besprechung 1, PM-14 Protokoll |
 | Mi 18.11. | DEP-4 Deploy-Workflow |
@@ -98,5 +98,5 @@ Die Reihenfolge folgt den Abhängigkeiten: Testumgebung (DEP-1, DEP-2), dann Log
 | Massnahme | Umsetzung in Sprint 2 |
 | --- | --- |
 | Experten zeitnah einbeziehen | Teams-Post nach Planning und Review mit beiden Experten markiert, Antwort auf Rückmeldungen innerhalb von 2 Tagen |
-| Sofort starten | Planning am 12.11., Umsetzung ab dem ersten Arbeitstag am 14.11. |
+| Sofort starten | Umsetzung beginnt am Tag des Plannings (12.11.) |
 | Neue Arbeit zuerst als Issue erfassen | Gilt ab heute, auch für Doku-Arbeit (DOC-2) |
