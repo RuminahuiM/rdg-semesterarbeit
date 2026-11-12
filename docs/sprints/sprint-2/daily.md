@@ -16,4 +16,4 @@ Sprint 2 geplant: Sprint-Ziel festgelegt, alle 18 Stories nach der Definition of
 
 | Story | Story Points | Schätzung (h) | Tatsächlich (h) | Notiz |
 | --- | --- | --- | --- | --- |
-| [PM-8](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/31) | 2 | 2 | 1.0 | Planning dokumentiert; Board und Teams-Post folgen |
+| [PM-8](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/31) | 2 | 2 | 1.0 | Done: Planning, DoR, Board; kein eigener Teams-Post (Ankündigung im Post zu Sprint 1) |

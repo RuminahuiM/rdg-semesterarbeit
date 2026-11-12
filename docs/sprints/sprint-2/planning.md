@@ -89,7 +89,7 @@ Die Reihenfolge folgt den Abhängigkeiten: Testumgebung (DEP-1, DEP-2), dann Log
 
 - [x] Alle ausgewählten Stories haben eine Story und mindestens zwei Akzeptanzkriterien
 - [x] Alle ausgewählten Stories sind geschätzt (Story Points im Issue)
-- [ ] Story Points im Board eingetragen, Stories auf ToDo
+- [x] Story Points im Board eingetragen, Stories auf ToDo (12.11.2026)
 - [x] Abhängigkeiten geklärt (im Issue und im Umsetzungsplan)
 - [x] Offene Findings (F-006, F-007), aktive Risiken und Massnahmen aus der Retro von Sprint 1 geprüft
 
