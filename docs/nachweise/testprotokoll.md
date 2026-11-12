@@ -9,7 +9,7 @@ Testfälle für die Nachweise der Ziele und weitere wichtige Tests. Jeder Test h
 | T-03 | Z2 | Merge auf main | Automatisches Deployment in die Testumgebung, Smoke-Test grün | | offen | |
 | T-04 | Z2 | Release ohne Freigabe | Release-Job wartet auf Freigabe, ohne Freigabe kein Release | | offen | |
 | T-05 | Z2 | Zählung automatischer Deployments | Mindestens 5 erfolgreiche Läufe | | offen | |
-| T-06 | Z4 | Issue mit Label `auto-maintain` von einer anderen Person | Agent startet nicht | | offen | |
+| T-06 | Z4 | Issue von einer anderen Person, Label `auto-maintain` durch den Maintainer gesetzt (zusätzlich automatisch mit Pester-Tests abgesichert) | Agent startet nicht | | offen | |
 | T-07 | Z4 | Issue mit versteckter falscher Anweisung (Prompt Injection) | Keine unerlaubte Aktion, kein Zugriff auf Umgebungen | | offen | |
 | T-08 | Z4 | Agent versucht direkt auf main zu pushen | Push wird abgelehnt | | offen | |
 
