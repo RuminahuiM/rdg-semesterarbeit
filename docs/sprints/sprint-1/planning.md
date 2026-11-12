@@ -1,7 +1,7 @@
 # Sprint 1: Planning
 
 **Datum:** 07.11.2026  
-**Sprint-Zeitraum:** 26.10.2026 bis 16.11.2026  
+**Sprint-Zeitraum:** 26.10.2026 bis 16.11.2026 (abgeschlossen am 12.11.2026, siehe [Review](review.md))  
 **Release:** MVP  
 **Board:** [Milestone Sprint 1](https://github.com/RuminahuiM/rdg-semesterarbeit/milestone/1)
 
@@ -14,7 +14,7 @@ RDG liegt als sauberes DevOps-Projekt auf GitHub: Projekt-Setup und Board stehen
 
 ## 2. Ausgewählte Stories
 
-| Story | Titel | Ziel | Story Points | Priorität | Stand 08.11. |
+| Story | Titel | Ziel | Story Points | Priorität | Stand 12.11. |
 | --- | --- | --- | --- | --- | --- |
 | [PM-1](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/7) | Projekt-Setup mit Doku-Repo und GitHub Pages | PM | 3 | must | Done |
 | [PM-2](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/8) | Kanban-Board einrichten | PM | 2 | must | Done |
@@ -26,10 +26,10 @@ RDG liegt als sauberes DevOps-Projekt auf GitHub: Projekt-Setup und Board stehen
 | [CI-3](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/14) | Arbeitsregeln festlegen (Branching, Commits, Versionen) | Z1 | 2 | must | Done |
 | [CI-4](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/15) | CI-Pipeline reparieren | Z1 | 5 | must | Done |
 | [CI-5](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/16) | Branch-Schutz auf main und Nachweis | Z1 | 3 | must | Done |
-| [PM-6](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/17) | Besprechung 1 vorbereiten und protokollieren | PM | 1 | must | offen |
-| [PM-7](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/18) | Sprint 1 Review und Retrospektive | PM | 2 | must | offen |
+| [PM-6](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/17) | Besprechung 1 vorbereiten und protokollieren | PM | 1 | must | Done (Protokoll als PM-14 in Sprint 2) |
+| [PM-7](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/18) | Sprint 1 Review und Retrospektive | PM | 2 | must | Done |
 
-**Summe Story Points:** 25 (Stand 11.11.: 22 SP Done, 3 SP offen für den Sprint-Abschluss, siehe [Daily Journal](daily.md))  
+**Summe Story Points:** 25 (Stand 12.11.: alle 25 SP Done, siehe [Daily Journal](daily.md) und [Review](review.md))  
 **Verfügbare Kapazität ab 08.11.:** ca. 19 h, davon ca. 15 h planbar (20 Prozent Reserve)
 
 ## 3. Umsetzungsplan
@@ -38,10 +38,10 @@ RDG liegt als sauberes DevOps-Projekt auf GitHub: Projekt-Setup und Board stehen
 | --- | --- |
 | Sa 07.11. (erledigt) | PM-1 Projekt-Setup, PM-2 Board, PM-3 Backlog, PM-4 Planning, PM-5 Formular Version 2 gesendet |
 | So 08.11. (erledigt) | PM-3 und PM-4 abgeschlossen (Story Points im Board, Teams-Post), CI-1 Lizenz bis zum Pull Request |
-| Mi 11.11. | CI-3 Arbeitsregeln mit ADR, CI-2 falls Zeit bleibt |
-| Sa 14.11. | CI-4 CI-Pipeline reparieren |
-| So 15.11. | CI-5 Branch-Schutz und Nachweis, PM-6 Vorbereitung Besprechung 1, Entwurf PM-7 |
-| Mo 16.11. | Besprechung 1, PM-7 Review und Retro abschliessen, Teams-Post |
+| Mi 11.11. (erledigt) | CI-1 bis CI-5 abgeschlossen (geplant waren hier nur CI-3 und CI-2), PM-5 Done |
+| Do 12.11. (erledigt) | PM-6 Vorbereitung Besprechung 1, PM-7 Review und Retro, Sprint 1 abgeschlossen |
+
+**Abweichung vom Plan:** CI-4 und CI-5 waren für das Wochenende vom 14. und 15.11. geplant, wurden aber schon am 11.11. fertig. Sprint 1 endete darum am 12.11. statt am 16.11. Die Tage 14. und 15.11. gehören zu Sprint 2.
 
 ## 4. Risiken und Abhängigkeiten
 

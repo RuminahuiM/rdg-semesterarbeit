@@ -1,7 +1,7 @@
 # Sprint 2: Retrospektive
 
 **Datum:** folgt  
-**Sprint-Zeitraum:** 17.11.2026 bis 14.12.2026
+**Sprint-Zeitraum:** 12.11.2026 bis 14.12.2026
 
 !!! info "Folgt am Ende von Sprint 2"
 

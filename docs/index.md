@@ -40,7 +40,7 @@ Details im [Einreichungsformular](projekt/einreichungsformular.md).
 
 | | |
 | :--- | :--- |
-| Aktueller Sprint | Sprint 1 (26.10. bis 16.11.2026) |
+| Aktueller Sprint | Sprint 2 (12.11. bis 14.12.2026), Sprint 1 abgeschlossen am 12.11. |
 | Nächste Besprechung | 16.11.2026 |
 | Feature-Freeze | 09.01.2027 |
 

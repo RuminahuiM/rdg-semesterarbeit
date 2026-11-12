@@ -22,7 +22,7 @@ Zentrale Stammdaten der Semesterarbeit.
 | Termin | Datum | Notiz |
 | --- | --- | --- |
 | Einreichung Formular | 21.10.2026 | Version 2 nach Feedback am 07.11.2026 |
-| Besprechung 1 | 16.11.2026 | Ende Sprint 1 |
+| Besprechung 1 | 16.11.2026 | nach Sprint 1, zu Beginn von Sprint 2 |
 | Besprechung 2 | 14.12.2026 | Ende Sprint 2 |
 | Besprechung 3 | 22.01.2027 | Ende Sprint 3 |
 | Feature-Freeze | 09.01.2027 | Danach nur noch Tests, Fehlerbehebung, Auswertung und Doku |
@@ -50,12 +50,12 @@ Der Sprint-Kalender mit den echten Arbeitstagen und der Kapazität pro Sprint st
 
 | Sprint | Zeitraum | Ziel | Status |
 | --- | --- | --- | --- |
-| 1 | 26.10. bis 16.11.2026 | Sauberes DevOps-Projekt: Repos, Board, Branch-Schutz, CI-Pipeline repariert und getestet (Z1) | aktiv |
-| 2 | 17.11. bis 14.12.2026 | Automatisches Deployment in die Testumgebung und Release mit Freigabe (Z2), erste KI-Pipeline mit Sicherheitsregeln (Z4) | geplant |
+| 1 | 26.10. bis 12.11.2026 (geplant bis 16.11.) | Sauberes DevOps-Projekt: Repos, Board, Branch-Schutz, CI-Pipeline repariert und getestet (Z1) | abgeschlossen |
+| 2 | 12.11. bis 14.12.2026 | Automatisches Deployment in die Testumgebung und Release mit Freigabe (Z2), erste KI-Pipeline mit Sicherheitsregeln (Z4) | aktiv |
 | 3 | 15.12.2026 bis 22.01.2027 | KI-Pipeline fertig, 8 Test-Issues und Prompt-Injection-Test durchspielen und auswerten (Z3, Z4) | geplant |
 | Abschluss | 23.01. bis 27.01.2027 | Reflexion, Schlusspräsentation, Abgabe | geplant |
 
-**Aktueller Sprint:** 1
+**Aktueller Sprint:** 2
 
 ## Tracking
 

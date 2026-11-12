@@ -1,6 +1,6 @@
 # Sprint 2: Daily Journal
 
-**Sprint-Zeitraum:** 17.11.2026 bis 14.12.2026  
+**Sprint-Zeitraum:** 12.11.2026 bis 14.12.2026  
 **Release:** MLP  
 **Board:** [Milestone Sprint 2](https://github.com/RuminahuiM/rdg-semesterarbeit/milestone/2)
 

@@ -4,7 +4,7 @@ Die Roadmap folgt den Releases MVP, MLP und MMP, wie es die TBZ für Semesterarb
 
 | Release | Ende | Was der Release bringt |
 | --- | --- | --- |
-| MVP | Sprint 1, 16.11.2026 | RDG liegt sauber auf GitHub, Board steht, Branch-Schutz aktiv, CI-Pipeline läuft grün (Z1) |
+| MVP | Sprint 1, 12.11.2026 (geplant 16.11.) | RDG liegt sauber auf GitHub, Board steht, Branch-Schutz aktiv, CI-Pipeline läuft grün (Z1) |
 | MLP | Sprint 2, 14.12.2026 | Jeder Merge deployt automatisch in die Testumgebung, Release nur nach Freigabe (Z2). Erste KI-Pipeline mit Sicherheitsregeln (Z4) |
 | MMP | Sprint 3, 22.01.2027 | KI-Pipeline für vier Issue-Arten, 8 Test-Issues ausgewertet, Prompt-Injection-Test (Z3, Z4) |
 
@@ -41,12 +41,12 @@ gantt
     tickInterval 2week
     weekday monday
     section Sprints
-    Sprint 1 (Z1)                  :s1, 2026-10-26, 2026-11-16
-    Sprint 2 (Z2, Z4)              :s2, 2026-11-17, 2026-12-14
+    Sprint 1 (Z1)                  :s1, 2026-10-26, 2026-11-12
+    Sprint 2 (Z2, Z4)              :s2, 2026-11-12, 2026-12-14
     Sprint 3 (Z3, Z4)              :s3, 2026-12-15, 2027-01-22
     Abschluss und Abgabe           :s4, 2027-01-23, 2027-01-27
     section Releases
-    MVP                            :milestone, m1, 2026-11-16, 0d
+    MVP                            :milestone, m1, 2026-11-12, 0d
     MLP                            :milestone, m2, 2026-12-14, 0d
     MMP                            :milestone, m3, 2027-01-22, 0d
     section Absenzen

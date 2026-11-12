@@ -148,7 +148,7 @@ Um den Effekt sichtbar zu machen, vergleiche ich pro Story die Schätzung (Story
 
 | Release | Ende | Was der Release bringt |
 | --- | --- | --- |
-| MVP | Sprint 1, 16.11.2026 | RDG liegt sauber auf GitHub, Board steht, Branch-Schutz aktiv, CI-Pipeline grün (Z1) |
+| MVP | Sprint 1, 12.11.2026 (geplant 16.11.) | RDG liegt sauber auf GitHub, Board steht, Branch-Schutz aktiv, CI-Pipeline grün (Z1) |
 | MLP | Sprint 2, 14.12.2026 | Automatisches Deployment in die Testumgebung, Release nur nach Freigabe (Z2), erste KI-Pipeline mit Sicherheitsregeln (Z4) |
 | MMP | Sprint 3, 22.01.2027 | KI-Pipeline für vier Issue-Arten, 8 Test-Issues ausgewertet, Prompt-Injection-Test (Z3, Z4) |
 
@@ -187,12 +187,12 @@ gantt
     tickInterval 2week
     weekday monday
     section Sprints
-    Sprint 1 (Z1)                  :s1, 2026-10-26, 2026-11-16
-    Sprint 2 (Z2, Z4)              :s2, 2026-11-17, 2026-12-14
+    Sprint 1 (Z1)                  :s1, 2026-10-26, 2026-11-12
+    Sprint 2 (Z2, Z4)              :s2, 2026-11-12, 2026-12-14
     Sprint 3 (Z3, Z4)              :s3, 2026-12-15, 2027-01-22
     Abschluss und Abgabe           :s4, 2027-01-23, 2027-01-27
     section Releases
-    MVP                            :milestone, m1, 2026-11-16, 0d
+    MVP                            :milestone, m1, 2026-11-12, 0d
     MLP                            :milestone, m2, 2026-12-14, 0d
     MMP                            :milestone, m3, 2027-01-22, 0d
     section Absenzen
@@ -232,15 +232,15 @@ Gearbeitet wird am Samstag und Sonntag (je ca. 5 h) und am Mittwoch (mindestens 
 
 | Abschnitt | Arbeitstage | Kapazität | davon planbar (80 %) |
 | --- | --- | --- | --- |
-| Sprint 1 (ab Start der Umsetzung am 07.11.) | So 08.11., Mi 11.11., Sa 14.11., So 15.11. | ca. 19 h | ca. 15 h |
-| Sprint 2 | Mi 18.11., Sa 21.11., So 22.11., Mi 25.11., Mi 09.12., Sa 12.12., So 13.12. | ca. 32 h | ca. 25.5 h |
+| Sprint 1 (ab Start der Umsetzung am 07.11., abgeschlossen am 12.11.) | Sa 07.11., So 08.11., Mi 11.11., Do 12.11. | tatsächlich ca. 16 h | |
+| Sprint 2 (ab 12.11.) | Sa 14.11., So 15.11., Mi 18.11., Sa 21.11., So 22.11., Mi 25.11., Mi 09.12., Sa 12.12., So 13.12. | ca. 42 h | ca. 33.5 h |
 | Sprint 3 bis Feature-Freeze | Mi 16.12., Sa 19.12., So 20.12., Mi 23.12., So 27.12., Mi 30.12., So 03.01., Mi 06.01. | ca. 36 h | ca. 29 h |
 | Sprint 3 nach Feature-Freeze | Sa 09.01., So 10.01., Mi 13.01., Sa 16.01., So 17.01., Mi 20.01. | ca. 28 h | Tests, Auswertung, Doku |
 | Abschluss | Sa 23.01., So 24.01., Mi 27.01. | ca. 14 h | Präsentation, Abgabe |
 
 *Tabelle 15: Sprint-Kalender mit echten Arbeitstagen*
 
-Sprint 2 ist durch die Ferien deutlich kürzer als die anderen Sprints. Das ist im Risk Register erfasst (R-S01) und wird im Sprint 2 Planning beim Umfang berücksichtigt.
+Sprint 1 war am 12.11. fertig und wurde vorzeitig abgeschlossen. Sprint 2 beginnt dadurch schon am 12.11. und bekommt die Arbeitstage 14. und 15.11. dazu. Die Ferien vom 26.11. bis 06.12. bleiben trotzdem eine Lücke mitten im Sprint (R-S01).
 
 ### 3.5 SWOT-Analyse
 
@@ -255,8 +255,11 @@ Sprint 2 ist durch die Ferien deutlich kürzer als die anderen Sprints. Das ist 
 
 ### 4.1 Sprint 1: Sauberes DevOps-Projekt
 
-!!! info "Folgt nach Sprint 1"
-    Ziel, Ergebnis, abgeschlossene Stories, Velocity, Abweichungen. Details im [Sprint 1](sprints/sprint-1/planning.md).
+**Ziel:** RDG liegt sauber auf GitHub, Board steht, Branch-Schutz aktiv, CI-Pipeline grün (Z1). **Ergebnis:** vollständig erreicht, alle 25 Story Points erledigt, Release MVP.
+
+Sprint 1 startete laut Ablaufplan am 26.10., die Umsetzung aber erst am 07.11., weil das Einreichungsformular zuerst überarbeitet werden musste. In vier Arbeitstagen entstanden das Projekt-Setup (Doku, Board, Backlog), die Lizenz, die Arbeitsregeln, die reparierte CI-Pipeline und der Branch-Schutz. Die CI-Reparatur war grösser als erwartet (4 von 6 Jobs rot, siehe [Kapitel 10.2](#102-ci-pipeline-z1)), dank KI-Unterstützung aber schneller erledigt als geschätzt. Weil alle Stories am 12.11. fertig waren, habe ich den Sprint vier Tage früher abgeschlossen.
+
+Die wichtigste Erkenntnis aus der Retrospektive: Die Experten habe ich zu Beginn zu lange auf eine Antwort warten lassen. Für Sprint 2 gilt darum, Rückmeldungen innerhalb von zwei Tagen zu beantworten. Details im [Review](sprints/sprint-1/review.md) und in der [Retrospektive](sprints/sprint-1/retro.md).
 
 ### 4.2 Sprint 2: Deployment, Release und erste KI-Pipeline
 
@@ -268,8 +271,15 @@ Sprint 2 ist durch die Ferien deutlich kürzer als die anderen Sprints. Das ist 
 
 ### 4.4 Fortschritt: Velocity und Burn-up
 
-!!! info "Folgt ab Sprint 1"
-    Geplante und erledigte Story Points pro Sprint, Burn-up-Chart aus dem Board.
+| Sprint | Geplante SP | Erledigte SP | Geschätzte Stunden (ohne KI) | Tatsächliche Stunden |
+| --- | --- | --- | --- | --- |
+| 1 | 25 | 25 | 27 | 16 |
+| 2 | folgt | | | |
+| 3 | folgt | | | |
+
+*Tabelle 24: Velocity pro Sprint*
+
+Die tatsächliche Zeit lag in Sprint 1 bei ca. 60 Prozent der Schätzung. Ein Burn-up-Chart folgt, sobald zwei Sprints vorliegen.
 
 ### 4.5 Kommunikation mit den Experten
 
@@ -279,6 +289,7 @@ Sprint 2 ist durch die Ferien deutlich kürzer als die anderen Sprints. Das ist 
 | 07.11.2026 | Corrado Parisi | Feedback zum Einreichungsformular | Formular überarbeitet (Version 2) und gesendet, Freigabe ausstehend |
 | 08.11.2026 | Alle Experten | Zwischenstand mit Links | Gepostet, Zuteilung Fachexperte DevOps offen |
 | 09.11.2026 | Corrado Parisi, Thanam Pangri | Freigabe des Formulars (Version 2) und fachliche Betreuung | Formular freigegeben ohne Auflagen; Thanam Pangri betreut die Arbeit fachlich |
+| 12.11.2026 | Corrado Parisi, Thanam Pangri | Sprint 1 Review und Vorbereitung von Besprechung 1 | Gepostet, Doku zur Durchsicht vor dem Termin |
 
 *Tabelle 8: Abstimmungen mit den Experten*
 
@@ -731,3 +742,4 @@ Siehe [Glossar](anhang/glossar.md).
 | 21 | Ursachen der roten CI-Jobs | [10.2](#102-ci-pipeline-z1) |
 | 22 | Eingetretene Risiken | [5.3](#53-eingetretene-risiken-und-reaktion) |
 | 23 | Ruleset für main | [10.1](#101-repository-und-arbeitsregeln-z1) |
+| 24 | Velocity pro Sprint | [4.4](#44-fortschritt-velocity-und-burn-up) |
