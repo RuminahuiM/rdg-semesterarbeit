@@ -22,19 +22,27 @@ Projektdokumentation gegengelesen und das Feedback eingearbeitet (Begründung f�
 !!! note "Zusatz ausserhalb der Semesterarbeit"
     Für das Portfolio habe ich Farbschema und Logo überarbeitet. Diese Doku lädt beides zentral von der Portfolio-Hauptseite, und das Logo im Kopf führt jetzt dorthin zurück. Die Zeit dafür ist in der Zeiterfassung unten nicht enthalten.
 
+### Mi 11.11.2026 (ca. 4 h)
+
+CI-1 bis CI-5 abgeschlossen: Lizenz und ADR 0001 bis 0003 gemergt, Arbeitsregeln (GitHub Flow, Conventional Commits, SemVer) in `CONTRIBUTING.md`, tote Links und Bezüge zum ersten Anwender aus der RDG-Doku entfernt (F-002, F-004, F-005 akzeptiert). Die CI-Pipeline war grösser als gedacht (4 von 6 Jobs rot mit mehreren Ursachen, siehe [Projektdokumentation 10.2](../../projektdokumentation.md#102-ci-pipeline-z1)), ist nach einem Review nachgebessert und auf `main` grün (F-001 gelöst, F-006 und F-007 neu). Das Ruleset auf `main` ist aktiv und als Code abgelegt, ein absichtlich fehlerhafter Pull Request wurde blockiert (T-01 bestanden), und PM-5 ist abgeschlossen, weil Corrado Parisi das Formular am 09.11. freigegeben und Thanam Pangri die fachliche Betreuung bestätigt hat.
+
 ## Zeiterfassung pro Story
 
-| Story | Story Points | Schätzung (h) | Sa 07.11. (h) | So 08.11. (h) | Total (h) | Stand |
-| --- | --- | --- | --- | --- | --- | --- |
-| [PM-1](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/7) | 3 | 3 | 4.0 | | 4.0 | Done |
-| [PM-2](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/8) | 2 | 2 | 0.3 | | 0.3 | Done |
-| [PM-3](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/9) | 3 | 3 | 0.3 | 0.5 | 0.8 | Done |
-| [PM-4](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/10) | 1 | 1 | 0.3 | 0.5 | 0.8 | Done |
-| [PM-5](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/11) | 1 | 1 | 0.1 | | 0.1 | wartet auf Freigabe |
-| [CI-1](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/12) | 1 | 1 | | 1.5 | 1.5 | In Review |
-| Ohne Story: Feedback in der Projektdokumentation, Recherche Abo, neue Stories | | | | 2.5 | 2.5 | |
-| Ohne Story: Gesamtdokument als PDF und Markdown | | | | 0.75 | 0.75 | |
-| Ohne Story: ADR 0001 freigegeben (gehört zu Z2) | | | | 0.25 | 0.25 | |
-| **Total** | **11** | **11** | **5.0** | **6.0** | **11.0** | |
+| Story | Story Points | Schätzung (h) | Sa 07.11. (h) | So 08.11. (h) | Mi 11.11. (h) | Total (h) | Stand |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| [PM-1](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/7) | 3 | 3 | 4.0 |  |  | 4.0 | Done |
+| [PM-2](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/8) | 2 | 2 | 0.3 |  |  | 0.3 | Done |
+| [PM-3](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/9) | 3 | 3 | 0.3 | 0.5 |  | 0.8 | Done |
+| [PM-4](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/10) | 1 | 1 | 0.3 | 0.5 |  | 0.8 | Done |
+| [PM-5](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/11) | 1 | 1 | 0.1 |  | 0.2 | 0.3 | Done |
+| [CI-1](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/12) | 1 | 1 |  | 1.5 | 0.4 | 1.9 | Done |
+| [CI-2](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/13) | 1 | 1 |  |  | 0.3 | 0.3 | Done |
+| [CI-3](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/14) | 2 | 2 |  |  | 0.4 | 0.4 | Done |
+| [CI-4](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/15) | 5 | 5 |  |  | 2.0 | 2.0 | Done |
+| [CI-5](https://github.com/RuminahuiM/rdg-semesterarbeit/issues/16) | 3 | 3 |  |  | 0.7 | 0.7 | Done |
+| Ohne Story: Feedback in der Projektdokumentation, Recherche Abo, neue Stories | | | | 2.5 | | 2.5 | |
+| Ohne Story: Gesamtdokument als PDF und Markdown | | | | 0.75 | | 0.75 | |
+| Ohne Story: ADR 0001 freigegeben (gehört zu Z2) | | | | 0.25 | | 0.25 | |
+| **Total** | **22** | **22** | **5.0** | **6.0** | **4.0** | **15.0** | |
 
-Die Schätzung in Stunden ist der Richtwert ohne KI aus dem [Scrum-Setup](../../projekt/scrum-setup.md#schatzung). Bei PM-2 bis PM-5 war ich mit KI-Unterstützung deutlich schneller als geschätzt. Länger als geschätzt brauchten das Projekt-Setup (PM-1), in dem auch Theorie, Anforderungen und ADR 0001 mitliefen, und die Lizenz (CI-1), weil der Lizenzvergleich mit ADR mehr Aufwand war als nur die Datei. Am Sonntag ging fast die Hälfte der Zeit in Arbeit ohne eigene Story, vor allem in die Doku. Das nehme ich in die Retrospektive mit.
+Die Schätzung in Stunden ist der Richtwert ohne KI aus dem [Scrum-Setup](../../projekt/scrum-setup.md#schatzung). Bei PM-2 bis PM-5 war ich mit KI-Unterstützung deutlich schneller als geschätzt. Länger als geschätzt brauchten das Projekt-Setup (PM-1), in dem auch Theorie, Anforderungen und ADR 0001 mitliefen, und die Lizenz (CI-1), weil der Lizenzvergleich mit ADR mehr Aufwand war als nur die Datei. Am Sonntag ging fast die Hälfte der Zeit in Arbeit ohne eigene Story, vor allem in die Doku. Das nehme ich in die Retrospektive mit. Am Mittwoch war es umgekehrt: Die CI-Reparatur (CI-4) war inhaltlich grösser als gedacht, mit KI-Unterstützung aber in rund 2 h statt der geschätzten 7 h erledigt.
