@@ -23,8 +23,9 @@ Ab Score 4 wird das Risiko aktiv beobachtet, ab Score 6 hat es hohe Priorität.
 | R-T02 | Missbrauch über Issue-Texte (Prompt Injection) oder zu viele Rechte für den Agenten | T | Mittel | Hoch | 6 | aktiv |
 | R-T03 | Die bestehenden Pipelines laufen nicht und brauchen mehr Arbeit als gedacht | T | Mittel | Mittel | 4 | eingetreten, bewältigt (11.11.2026) |
 | R-K01 | Der KI-Teil ist schwieriger als gedacht | K | Mittel | Hoch | 6 | aktiv |
-| R-E01 | Testumgebung oder Test-Tenant nicht rechtzeitig verfügbar | E | Mittel | Hoch | 6 | aktiv |
+| R-E01 | Testumgebung oder Test-Tenant nicht rechtzeitig verfügbar | E | Niedrig | Hoch | 3 | Tenant und Abo stehen (13.11.2026), Installation folgt |
 | R-E02 | Die Kosten für die KI steigen | E | Niedrig | Mittel | 2 | beobachten |
+| R-E03 | RDG verändert im eigenen Geschäftstenant echte Gruppen oder Konten | E | Niedrig | Mittel | 2 | beobachten |
 | R-S01 | Zu wenig Zeit, Sprints laufen über (besonders Sprint 2, Ferien 26.11. bis 06.12.) | S | Mittel | Hoch | 6 | aktiv |
 | R-S02 | Zu wenig Zeit für Doku und Auswertung am Schluss | S | Mittel | Hoch | 6 | aktiv |
 | R-P01 | Berufliche oder private Belastung, Ausfall | P | Mittel | Mittel | 4 | aktiv |
@@ -73,6 +74,12 @@ Ab Score 4 wird das Risiko aktiv beobachtet, ab Score 6 hat es hohe Priorität.
 - **Massnahme:** Realistischer Arbeitsrhythmus, Puffer vor der Abgabe.
 - **Plan B:** Umfang reduzieren und früh mit den Experten sprechen.
 
+### R-E03: RDG im eigenen Geschäftstenant
+
+- **Hintergrund:** Die Testumgebung läuft im Tenant von Rumi Designs, der auch für meine Mail genutzt wird. RDG bekommt Rechte auf den ganzen Tenant, und die Pipeline deployt automatisch.
+- **Massnahme:** Im Tenant gibt es ausser mir nur erfundene Testbenutzer (`rdgtest..`). RDG-Regeln greifen nur auf Testbenutzer und Testgruppen. RDG startet read-only, read-write erst nach dem Test. Der KI-Agent hat keinen Zugriff auf die Umgebung (Z4).
+- **Plan B:** RDG pausieren (Notbremse in der Web-App), betroffene Gruppen aus dem Audit Log wiederherstellen. Wächst Rumi Designs, ziehe ich die Testumgebung in einen eigenen Tenant um.
+
 ## Historie
 
 | Datum | Änderung |
@@ -82,3 +89,4 @@ Ab Score 4 wird das Risiko aktiv beobachtet, ab Score 6 hat es hohe Priorität.
 | 08.11.2026 | R-T02 um Idee KI-Intake-Chat ergänzt, R-E02 um Betrieb über das Abo und Open-Source-Modelle ergänzt |
 | 11.11.2026 | R-T03 eingetreten und bewältigt: CI-Reparatur in 5 Pull Requests, alle Jobs grün |
 | 12.11.2026 | Sprint 1 Review: R-S01 von 9 auf 6 gesenkt. Sprint 1 war früher fertig, Sprint 2 beginnt am 12.11. und bekommt zwei Arbeitstage mehr |
+| 13.11.2026 | R-E01 entschärft: Testumgebung eingerichtet (DEP-1). Neues Risiko R-E03, weil die Testumgebung im eigenen Geschäftstenant läuft |

@@ -92,7 +92,7 @@ Ich möchte RDG darum als Open-Source-Projekt veröffentlichen, das möglichst w
 | RDG als DevOps-Projekt aufnehmen: Repository, Arbeitsregeln, Tests, Doku | Neue Funktionen von RDG selbst |
 | Alle Pipelines (CI, Deployment, Release), auch die bestehenden | Kubernetes (Ausnahme für diese Arbeit, abgesprochen am 21.10.2026; folgt in der 5. Semesterarbeit) |
 | KI-Pipeline für vier Issue-Arten mit Auswertung | Weitere Issue-Arten und ein KI-Helfer in der Web-App (optional) |
-| Testumgebung in einem eigenen Test-Tenant | Änderungen an der produktiven Installation beim ersten Anwender |
+| Testumgebung im eigenen Tenant (Rumi Designs) | Änderungen an der produktiven Installation beim ersten Anwender |
 
 *Tabelle 3: Scope*
 
@@ -498,7 +498,7 @@ Ist die CI rot oder verlangt das Review Änderungen, geht der Pull Request zurü
 | --- | --- | --- |
 | GitHub (Repos, Actions, Projects, Pages) | Code, Pipelines, Board, Doku | Zentrale Plattform, Limits des Free-Plans |
 | Microsoft Azure | Testumgebung von RDG | Kosten (ca. 27 USD pro Monat), Login aus der Pipeline per OIDC |
-| Microsoft-365-Test-Tenant | Gruppen und Benutzer für Tests | Muss zuerst eingerichtet werden (Sprint 2) |
+| Microsoft-365-Tenant `rumidesigns.onmicrosoft.com` | Benutzer, Gruppen und Exchange für die Tests | Eigener Tenant, seit 13.11.2026 eingerichtet (siehe 10.3) |
 | Claude (Anthropic), angemeldet über das Pro-Abo, API-Key nur als Fallback | KI-Agent in der Pipeline | Limits des Abos werden mit meiner normalen Nutzung geteilt, Qualität der Ergebnisse |
 | Experten und Teams-Kanal | Feedback, Freigaben | Feste Besprechungstermine bestimmen die Sprint-Längen |
 
@@ -513,6 +513,7 @@ Wichtige Entscheidungen werden im RDG-Repository als Architecture Decision Recor
 | Plattform für das automatische Deployment | GitHub Actions, Azure DevOps, Deployment von Hand | GitHub Actions | [ADR 0001](https://github.com/RuminahuiM/rdg/blob/main/docs/adr/0001-deploy-test-environment-with-github-actions.md) (Accepted) |
 | Branching-Strategie | GitHub Flow, Git Flow, Trunk-based | GitHub Flow | [ADR 0003](https://github.com/RuminahuiM/rdg/blob/main/docs/adr/0003-branching-github-flow.md) (Accepted) |
 | Lizenz | MIT, Apache-2.0, GPL-3.0 | MIT | [ADR 0002](https://github.com/RuminahuiM/rdg/blob/main/docs/adr/0002-license-mit.md) (Accepted) |
+| Tenant für die Testumgebung | Reiner Test-Tenant, eigener Geschäftstenant (Rumi Designs), Microsoft-365-Entwicklertenant | Geschäftstenant Rumi Designs | siehe 10.3 |
 | Login aus der Pipeline nach Azure | OIDC, Client-Secret | folgt | folgt in Sprint 2 (DEP-3) |
 | KI-Agent in der Pipeline | Claude Code in GitHub Actions, andere Agenten | folgt | folgt in Sprint 2 |
 | Anmeldung und Kosten des Agenten | Claude-Abo (OAuth-Token), API-Key, selbst gehostetes Open-Source-Modell | folgt | folgt in Sprint 2 (AI-9, AI-10) |
@@ -526,7 +527,7 @@ Wichtige Entscheidungen werden im RDG-Repository als Architecture Decision Recor
 | Lizenz | RDG ist Open Source unter der MIT-Lizenz (Story CI-1, ADR 0002). Die Datei `LICENSE` liegt im Root des RDG-Repositorys, README und `CONTRIBUTING.md` nennen die Lizenz. Beiträge stehen unter derselben Lizenz. Der ADR vergleicht MIT, Apache-2.0 und GPL-3.0, auch im Hinblick auf die Lizenzen der verwendeten Bibliotheken. Rechteinhaber bin ich, weil RDG als Freizeitprojekt entstanden ist |
 | Datenschutz | In den Repositories und in der Testumgebung gibt es keine echten Personendaten. Testbenutzer sind erfunden, Beispiele verwenden `contoso`. Der KI-Agent sieht nur Code und Issue-Texte |
 | Secrets | Keine Passwörter oder Schlüssel in den Repositories. Login nach Azure per OIDC (ADR 0001). Die CI scannt die Infrastruktur auf unsichere Einstellungen |
-| Produktive Umgebung | Die Installation beim ersten Anwender wird in dieser Arbeit nicht verändert. Getestet wird nur im eigenen Test-Tenant |
+| Produktive Umgebung | Die Installation beim ersten Anwender wird in dieser Arbeit nicht verändert. Getestet wird nur im eigenen Tenant von Rumi Designs, mit erfundenen Testbenutzern |
 | KI-generierter Code und Text | Wird wie jeder andere Beitrag geprüft (Pull Request, CI, Review). Die Nutzung ist in [Kapitel 14.1](#141-deklaration-der-ki-nutzung) deklariert |
 
 *Tabelle 18: Compliance*
@@ -593,6 +594,38 @@ Eine Grenze bleibt: Fehler in verschachtelten Objekten (z.B. `target.mode`) meld
 Ergebnis: Alle 6 Jobs sind grün, 612 von 612 Tests bestehen (21 neue), die Testabdeckung der Engine liegt bei 93 %. Ein Durchlauf dauert rund 1,5 Minuten, weil die Jobs parallel laufen; der längste Job ist `web` mit den End-to-End-Tests.
 
 ### 10.3 Deployment und Release (Z2)
+
+#### Testumgebung (DEP-1)
+
+Für die Testumgebung habe ich zuerst einen reinen Test-Tenant geplant. Umgesetzt habe ich sie im Tenant meiner eigenen Firma Rumi Designs (`rumidesigns.onmicrosoft.com`), den ich ohnehin für meine Mailadresse brauche. Das spart eine zweite Lizenz und testet RDG unter realistischen Bedingungen. Der Nachteil: RDG bekommt bei der Installation Rechte auf den ganzen Tenant, und die Pipeline deployt automatisch dorthin. Ein Fehler könnte also echte Gruppen verändern. Weil im Tenant ausser mir nur Testbenutzer sind, ist das Risiko klein; die RDG-Regeln greifen nur auf die Testbenutzer (R-E03).
+
+| Bestandteil | Umsetzung |
+| --- | --- |
+| Tenant | `rumidesigns.onmicrosoft.com`, Admin-Konto mit MFA (Security Defaults) |
+| Lizenz | 1 × Exchange Online (Plan 1), monatlich kündbar |
+| Azure-Abo | "Azure Plan" (Microsoft Customer Agreement, Abrechnung nach Verbrauch wie Pay-as-you-go), im selben Billing-Konto wie die Lizenz |
+| Budget-Alarm | 20 CHF pro Monat auf das ganze Abo, Mail bei 80 % und 100 %, über die Action Group in `rg-rumidesigns-monitoring` |
+| Testbenutzer | `rdgtest01` bis `rdgtest15`, erfunden, mit Abteilung, Ort und Erweiterungsattributen; nur Cloud, ohne Anmeldung |
+
+*Tabelle 25: Testumgebung*
+
+| Kostenpunkt | Pro Monat |
+| --- | --- |
+| Exchange Online (Plan 1) | 4.05 CHF |
+| Azure (Schätzung aus dem Design, nach der Installation zu prüfen) | ca. 27 USD |
+| Budget-Grenze für das Abo | 20 CHF |
+
+*Tabelle 26: Kosten der Testumgebung*
+
+Die Azure-Schätzung liegt über der Budget-Grenze. Der Alarm zeigt also früh, ob die echten Kosten tiefer sind als geschätzt; nach der Installation (DEP-2) passe ich Budget oder Schätzung an.
+
+Was beim Einrichten auffiel:
+
+- Ein neues Abo muss die Azure-Dienste erst registrieren (Resource Provider). Für die Action Group des Budgets war das `Microsoft.Insights`; die Dienste für RDG registriert später der Bootstrap.
+- Microsoft blockiert Gast-Einladungen in neuen Tenants teilweise eine Zeit lang. Die Einstellung im Tenant erlaubt sie, die Einladungen wurden trotzdem abgelehnt. Die Gäste sind für die Tests nicht zwingend und werden später nachgeholt.
+- Die Skripte für die Testdaten hatten zwei Fehler: abgelehnte Einladungen wurden als erfolgreich gezählt, und die Testbenutzer passten nicht zum Skript für die Testgruppen. Beides ist in [RDG-PR #21](https://github.com/RuminahuiM/rdg/pull/21) behoben.
+
+Tenant- und Abo-IDs stehen nicht im Repository.
 
 ### 10.4 KI-Pipeline (Z3)
 
@@ -743,3 +776,5 @@ Siehe [Glossar](anhang/glossar.md).
 | 22 | Eingetretene Risiken | [5.3](#53-eingetretene-risiken-und-reaktion) |
 | 23 | Ruleset für main | [10.1](#101-repository-und-arbeitsregeln-z1) |
 | 24 | Velocity pro Sprint | [4.4](#44-fortschritt-velocity-und-burn-up) |
+| 25 | Testumgebung | [10.3](#103-deployment-und-release-z2) |
+| 26 | Kosten der Testumgebung | [10.3](#103-deployment-und-release-z2) |
